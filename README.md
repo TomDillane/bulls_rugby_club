@@ -1,45 +1,73 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Bulls Rugby Club
+## Introduction
+The purpose of this website is to provide an online presence for a Rugby club.
+The site will contain information about the club in general, latest news and 
+results and team details. Users will have the option to join the club and 
+join a team as a player. 
 
-Welcome USER_NAME,
+## User Stories
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+### First Time Users
 
-## Gitpod Reminders
++ I want to get an overview of the club
++ I want to see latest news related to the club and teams
++ I want the option to join the club
++ I want the option to join a team in the club
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Returning Users
 
-`python3 -m http.server`
++ I want to be able to log in
++ I want to be able to edit my own profile
++ I want to see latest news related to the club and teams
 
-A blue button should appear to click: *Make Public*,
+### Admiin Users
 
-Another blue button should appear to click: *Open Browser*.
++ I want to be able to update latest news
++ I want to be able to edit other profiles
++ I want to grow the club membership
++ I want to keep up to date on team memebership
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## UX
 
-A blue button should appear to click: *Make Public*,
+### Strategy Plane
 
-Another blue button should appear to click: *Open Browser*.
+The site is the online representation of a rugby club. Admins must be able to 
+run the site overall, as is the case with the actual club. New members  must be 
+able to join and optionally select a team as a player. Returning players must 
+be able to log in and edit their profile. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Scope Plane
 
-## Updates Since The Instructional Video
+The scope of the site is to allow the admin to run the site in terms of content and
+ the users to become members, edit their own information only and keep up to date
+ in club affairs. 
+ The site will include:
+ + Home page with club overview
+ + Latest news on club and team including results
+ + Team details
+ + Log in option for members
+ + Join option for new users
+ + Option to join a team as a player
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Structure Plane
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+The site will be structured in a consistent manner. The NAV bar will contain 
+the menu options as relevant to the user:
++ Home
++ News
++ Men's Rugby
++ Women's Rugby
++ Sign Up / Log Out
++ Log In / Log Out
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Skeleton Plane 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+The site will have 7 pages. There will be no reliance on the back button. 
+The user will at any point be able to log out or sign up / sign in.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Surface Plane
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The site's colors, typography and layout will be consistent and in line with the club's colors.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
---------
-
-Happy coding!
