@@ -52,6 +52,8 @@ The scope of the site is to allow the admin to run the site in terms of content 
 
 ### Structure Plane
 
+#### Frontend
+
 The site will be structured in a consistent manner. The NAV bar will contain 
 the menu options as relevant to the user:
 + Home
@@ -60,6 +62,66 @@ the menu options as relevant to the user:
 + Women's Rugby
 + Sign Up / Log Out
 + Log In / Log Out
+
+#### Home
+![Database Design](/readme_images/home.png)
+
+#### News
+![Database Design](/readme_images/news.png)
+
+#### Team
+![Database Design](/readme_images/team.png)
+
+#### Sign Up Form
+![Database Design](/readme_images/member_sign_form.png)
+
+#### Join Team Form
+![Database Design](/readme_images/team_join_form.png)
+
+#### Log In Form
+![Database Design](/readme_images/log_in.png)
+
+
+#### Backend
+
+The database used is MongoDB. It is a non relational file based.
+There are four collections:
+
+1. Membership
+2. Team
+3. News
+4. NewsLetter
+
+
+
+![Database Design](/readme_images/database.png)
+
+##### Membership
+
+This allows a new user to become a member of the club. The name, email and password
+are captured for log in.
+Where membership type of "Player", is selected, the user will be 
+directed to the player form where playing position and date of birth must be selected.
+Gender will direct to the relevant team.
+The options of "Volunteer", and "Social", are for the club management to use for event organisation.
+
+##### Team
+
+This will only apply where "Player", is selected at the "Sign Up", stage.
+The user will populate their playing position, DOB and whether they are available to play currently or not.
+This will be available for editing by the user so that the team manager has a current state for each player.
+
+
+##### News
+
+This will only be available for editing by the site admin. It will contain 
+latest club updates such as team results, upcoming fixtures and social events.
+
+##### NewsLetter
+
+This will allow users to the site to sign up for a regular newsletter. It will not require sign up to the club.
+
+
 
 ### Skeleton Plane 
 
