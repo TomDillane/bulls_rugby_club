@@ -63,17 +63,17 @@ the menu options as relevant to the user:
 + Sign Up / Log Out
 + Log In / Log Out
 
-[Home Wireframe](https://github.com/TomDillane/bulls_rugby_club/tree/master/readme_images/home.png)
+[Home Wireframe](readme_images/home.png)
 
-[News Wireframe](https://github.com/TomDillane/bulls_rugby_club/tree/master/readme_images/news.png)
+[News Wireframe](readme_images/news.png)
 
-[Team Wireframe](https://github.com/TomDillane/bulls_rugby_club/tree/master/readme_images/team.png)
+[Team Wireframe](readme_images/team.png)
 
-[Sign Up Form Wireframe](https://github.com/TomDillane/bulls_rugby_club/tree/master/readme_images/member_sign_form.png)
+[Sign Up Form Wireframe](readme_images/member_sign_form.png)
 
-[Join Team Form Wireframe](https://github.com/TomDillane/bulls_rugby_club/tree/master/readme_images/team_join_form.png)
+[Join Team Form Wireframe](readme_images/team_join_form.png)
 
-[Log In Form Wireframe](https://github.com/TomDillane/bulls_rugby_club/tree/master/readme_images/log_in.png)
+[Log In Form Wireframe](readme_images/log_in.png)
 
 
 
@@ -88,7 +88,7 @@ There are four collections:
 4. NewsLetter
 
 
-[Database Wireframe](https://github.com/TomDillane/bulls_rugby_club/tree/master/readme_images/database.png)
+[Database Wireframe](readme_images/database.png)
 
 
 ##### Membership
