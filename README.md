@@ -88,7 +88,7 @@ There are four collections:
 4. NewsLetter
 
 
-[Database Wireframe](readme_images/database.png)
+[Database Wireframe](readme_images/database_v1.png)
 
 
 ##### Membership
