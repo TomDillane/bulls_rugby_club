@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men's Team</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>Men's Team</h2>
+    
     {% for man in men %}
         {{ man.name }}<br>
         {{ man.position }}<br>
         {{ man.dob }}<br>
         {{ man.available }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
