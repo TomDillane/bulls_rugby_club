@@ -1,0 +1,48 @@
+/* header */
+
+nav {
+    background-color: #340dc4;
+    padding-bottom: 100px;
+}
+
+nav .brand-logo {
+    color: #d8cdcd;
+}
+
+nav ul a {
+    color: #d8cdcd;
+}
+
+.fa-bars {
+    color: #d8cdcd;
+}
+
+.club-name {
+    font-family: 'Patua One', cursive;
+}
+
+nav ul {
+    font-family: 'Kiwi Maru', serif;
+    padding-top: 20px;
+}
+
+.sidenav-trigger {
+    padding-top: 25px;
+}
+
+nav li:hover {
+    background-color: #b31010;
+}
+
+/* header */
+
+/* Media Queries */
+
+@media only screen and (max-width: 992px) {
+    .club-name {
+        left: 120px !important;
+    }
+}
+  
+
+/* Media Queries */

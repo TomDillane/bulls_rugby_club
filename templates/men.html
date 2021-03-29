@@ -4,10 +4,10 @@
     <h2>Men's Team</h2>
     
     {% for man in men %}
-        {{ man.name }}<br>
-        {{ man.position }}<br>
-        {{ man.dob }}<br>
-        {{ man.available }}<br>
+       Name: {{ man.name }}<br>
+       Position: {{ man.position }}<br>
+       Date of Birth: {{ man.dob }}<br>
+       Availabe to play: {{ man.available }}<br>
     {% endfor %}
 
 {% endblock %}

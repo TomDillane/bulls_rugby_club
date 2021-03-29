@@ -8,19 +8,45 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Patua+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Bulls Rugby Club</title>
 </head>
-s
+
 <body>
-    <h1>Bulls Rugby Club</h1>
+    <nav>
+        <div class="nav-wrapper">
+            <h1 href="#!" class="brand-logo club-name">Bulls Rugby Club</h1>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="men-rugby.html">Men's Team</a></li>
+                <li><a href="women-rugby.html">Women's Team</a></li>
+                <li><a href="sign-up.html">Sign Up</a></li>
+                <li><a href="log-in.html">Log In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="men-rugby.html">Men's Team</a></li>
+        <li><a href="women-rugby.html">Women's Team</a></li>
+        <li><a href="sign-up.html">Sign Up</a></li>
+        <li><a href="log-in.html">Log In</a></li>
+    </ul>
+
     {% block content %}
     {% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script> src="{{ url_for('static', filename='js/script.js') }}"</script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>
