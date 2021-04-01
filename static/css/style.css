@@ -19,6 +19,7 @@ nav ul a {
 
 .club-name {
     font-family: 'Patua One', cursive;
+    left: 10px;
 }
 
 nav ul {
@@ -35,7 +36,29 @@ nav li:hover {
 }
 
 /* header */
+/* home */
 
+.img-size {
+    max-height: 90vh;
+    overflow: hidden;
+}
+
+.home-pic {
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+}
+
+/* home */
+
+/* footer */
+
+.social-link {
+    padding-left: 10px;
+
+}
+
+/* footer */
 /* Media Queries */
 
 @media only screen and (max-width: 992px) {
