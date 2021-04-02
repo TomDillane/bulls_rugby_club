@@ -1,7 +1,6 @@
 /* header */
 
 nav {
-    background-color: #340dc4;
     padding-bottom: 100px;
 }
 
@@ -44,18 +43,33 @@ nav li:hover {
 }
 
 .home-pic {
-    width: 100vw;
+    width: 130vw;
     height: auto;
     overflow: hidden;
+}
+
+.home-card {
+    color: #d8cdcd;
+    font-family: 'Kiwi Maru', serif;
 }
 
 /* home */
 
 /* footer */
 
-.social-link {
-    padding-left: 10px;
+.footer-unit {
+    padding-top: 20px;
+    padding-bottom: 2px;
+}
 
+.copyright {
+    color: #d8cdcd;
+}
+
+.social-item {
+    padding-left: 20px;
+    font-size: 30px;
+    color: #d8cdcd;
 }
 
 /* footer */
