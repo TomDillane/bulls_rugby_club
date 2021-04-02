@@ -16,21 +16,21 @@
 </head>
 
 <body>
-    <div class="navbar-fixed"s>
-    <nav>
-        <div class="nav-wrapper">
-            <h1 href="#!" class="brand-logo club-name">Bulls Rugby Club</h1>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('home_page') }}">Home</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="{{ url_for('get_men_team') }}">Men's Team</a></li>
-                <li><a href="women-rugby.html">Women's Team</a></li>
-                <li><a href="sign-up.html">Sign Up</a></li>
-                <li><a href="log-in.html">Log In</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar-fixed">
+        <nav class="indigo darken-4">
+            <div class="nav-wrapper">
+                <h1 href="#!" class="brand-logo club-name">Bulls Rugby Club</h1>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('home_page') }}">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="{{ url_for('get_men_team') }}">Men's Team</a></li>
+                    <li><a href="women-rugby.html">Women's Team</a></li>
+                    <li><a href="sign-up.html">Sign Up</a></li>
+                    <li><a href="log-in.html">Log In</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
 
     <ul class="sidenav" id="mobile-demo">
@@ -45,7 +45,20 @@
     {% block content %}
     {% endblock %}
 
-     
+    <footer class="footer-unit indigo darken-4">
+        <div class="row">
+            <div class="col s12 m2 copyright center-align">
+               <small> &copy; Copyright 2021 - Bulls Rugby Club </small>
+            </div>
+            <div class="col s12 m2 offset-m8 center-align">
+                <a class="social-item" href="https://www.facebook.com" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a class="social-item" href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a class="social-item" href="https://www.instagram.com" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
