@@ -67,7 +67,8 @@ nav li:hover {
 }
 
 .social-item {
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 30px;
     color: #d8cdcd;
 }
@@ -78,6 +79,12 @@ nav li:hover {
 @media only screen and (max-width: 992px) {
     .club-name {
         left: 120px !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .social-media {
+        text-align: center;
     }
 }
   
