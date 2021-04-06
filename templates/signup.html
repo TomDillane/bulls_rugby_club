@@ -5,20 +5,26 @@
 
 <form method="POST" action="{{ url_for('signup') }}">
     <div class="row">
-        <div class="input-field col s12 m6 offset-m3">
+
+        <div class="input-field col s12 m4">
             <input id="username" name="username" type="text" class="validate">
             <label for="username">Username</label>
         </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s12 m6 offset-m3">
+        <div class="input-field col s12 m4 offset-m2">
             <input id="password" name="password" type="password" class="validate">
             <label for="password">Password</label>
         </div>
     </div>
+
     <div class="row">
-        <div class="col s12 center-align">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up</button>
+
+        <div class="input-field col s12 m4">
+            <input id="firstname" name="firstname" type="text" class="validate">
+            <label for="firstname">First Name</label>
+        </div>
+        <div class="input-field col s12 m4 offset-m2">
+            <input id="lastname" name="lastname" type="text" class="validate">
+            <label for="lastname">Last Name</label>
         </div>
     </div>
     <div class="row">
@@ -27,37 +33,37 @@
         </div>
         <div class="col s3">
             <p>
-                <label for="player">
-                    <input class="with-gap" name="group1" type="radio" id="player" checked />
-                    <span>Player</span>
-                </label>
-            </p>
-        </div>
-        <div class="col s3">
-            <p>
                 <label for="volunteer">
-                    <input class="with-gap" name="group1" type="radio" id="volunteer" />
+                    <input class="with-gap" name="group1" type="radio" id="volunteer" onclick="noshowpos();" />
                     <span>Volunteer</span>
                 </label>
             </p>
         </div>
         <div class="col s3">
             <p>
+                <label for="player">
+                    <input class="with-gap" name="group1" type="radio" id="player" onclick="showpos();" />
+                    <span>Player</span>
+                </label>
+            </p>
+        </div>
+        <div class="col s3">
+            <p>
                 <label for="social-member">
-                    <input class="with-gap" name="group1" type="radio" id="social-member" />
+                    <input class="with-gap" name="group1" type="radio" id="social-member" onclick="noshowpos();" />
                     <span>Social</span>
                 </label>
             </p>
         </div>
     </div>
-    <div class="row">
+    <div class="row" id="gender-select">
         <div class="col s3">
             <p>Gender</p>
         </div>
         <div class="col s3">
             <p>
                 <label for="male">
-                    <input class="with-gap" name="group2" type="radio" id="male" checked />
+                    <input class="with-gap" name="group2" type="radio" id="male"  />
                     <span>Male</span>
                 </label>
             </p>
@@ -69,6 +75,28 @@
                     <span>Female</span>
                 </label>
             </p>
+        </div>
+    </div>
+    <div class="row" id="position-select">
+        <div class="col s3">
+            <p>Position</p>
+        </div>
+    <div class="input-field col s4">
+        <select>
+            <option value="" disabled selected>Position</option>
+            <option value="1">Front Row</option>
+            <option value="2">Second Row</option>
+            <option value="3">Back Row</option>
+            <option value="4">Half Back</option>
+            <option value="5">Center</option>
+            <option value="6">Full Back</option>
+        </select>
+        <label>Playing Position</label>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col s12 center-align">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up</button>
         </div>
     </div>
 </form>

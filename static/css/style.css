@@ -74,6 +74,13 @@ nav li:hover {
 }
 
 /* footer */
+/* sign up */
+
+#position-select, #gender-select {
+    display: none;
+}
+
+/* sign up */
 /* Media Queries */
 
 @media only screen and (max-width: 992px) {
