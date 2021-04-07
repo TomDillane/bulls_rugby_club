@@ -3,6 +3,7 @@ $(document).ready(function () {
     $('select').formSelect();
 });
 
+
 function noshowpos(){
   document.getElementById('position-select').style.display ='none';
   document.getElementById('gender-select').style.display ='none';
