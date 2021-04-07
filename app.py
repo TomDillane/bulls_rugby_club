@@ -32,6 +32,26 @@ def get_men_team():
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
+    if request.method == "POST":
+        user_exists = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if user_exists:
+            flash("Username already exists")
+            return redirect(url_for("signup"))
+
+        signup = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "firstname": request.form.get("firstname").lower(),
+            "lastname": request.form.get("lastname").lower(),
+            "type": request.form.get("group1").lower(),
+            "gender": request.form.get("group2").lower()
+        }
+        mongo.db.users.insert_one(signup)
+
+        session["current_user"] = request.form.get("username").lower()
+        flash("You are signed up!")
     return render_template("signup.html")
 
 
