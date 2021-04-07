@@ -76,7 +76,7 @@ nav li:hover {
 /* footer */
 /* sign up */
 
-#position-select, #gender-select {
+#gender-select, #position-select {
     display: none;
 }
 
