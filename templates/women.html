@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Women's Team</h2>
-    
+    <h2 class="center-align">Women's Team</h2>
+    <div class="container">
     {% for woman in women %}
-       Name: {{ woman.firstname }}<br>
+       Player: {{ woman.firstname }} {{ woman.lastname }}
        Position: {{ woman.position }}<br>
     {% endfor %}
-
+    </div>
 {% endblock %}
