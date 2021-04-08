@@ -19,7 +19,7 @@ nav ul a {
 .club-name {
     font-family: 'Patua One', cursive;
     left: 10px;
-}
+}s
 
 nav ul {
     font-family: 'Kiwi Maru', serif;
@@ -35,6 +35,14 @@ nav li:hover {
 }
 
 /* header */
+/* base */
+.flash-message {
+    margin-top: 50px;
+    color: #d8cdcd;
+    font-family: 'Kiwi Maru', serif;
+}
+
+/* base */
 /* home */
 
 .img-size {
