@@ -4,15 +4,15 @@ $(document).ready(function () {
 });
 
 
-function noshowpos(){
-  document.getElementById('position-select').style.display ='none';
-  document.getElementById('gender-select').style.display ='none';
+function noshowpos() {
+    document.getElementById('position-select').style.display = 'none';
+    document.getElementById('gender-select').style.display = 'none';
 }
-function showpos(){
-  document.getElementById('position-select').style.display = 'block';
-  document.getElementById('gender-select').style.display = 'block';
+function showpos() {
+    document.getElementById('position-select').style.display = 'block';
+    document.getElementById('gender-select').style.display = 'block';
 }
 
 
-   
+
 
