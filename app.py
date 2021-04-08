@@ -26,8 +26,14 @@ def home_page():
 
 @app.route("/get_men_team")
 def get_men_team():
-    men = mongo.db.men_team.find()
+    men = mongo.db.users.find( { "gender": "male"})
     return render_template("men.html", men=men)
+
+
+@app.route("/get_women_team")
+def get_women_team():
+    women = mongo.db.users.find( { "gender": "female"})
+    return render_template("women.html", women=women)
 
 
 @app.route("/signup", methods=["GET", "POST"])
