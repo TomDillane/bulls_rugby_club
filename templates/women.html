@@ -1,11 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2 class="center-align">Women's Team</h2>
-    <div class="container">
-    {% for woman in women %}
-       Player: {{ woman.firstname }} {{ woman.lastname }}
-       Position: {{ woman.position }}<br>
-    {% endfor %}
+<div class="row">
+    <div class="col s10 offset-s1 m4 offset-m4 red  team-name">
+        <h3 class="center-align">Women's Team</h3>
     </div>
+</div>
+{% for woman in women %}
+
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <ul class="collection team-detail">
+            <li class="collection-item  indigo lighten-4 avatar player-detail">
+                <i class="fas fa-football-ball red"></i>
+                <span class="title player-pos">{{ woman.position }}</span>
+
+                <p class="player-name">
+                    <i class="fas fa-running red"></i>
+                    {{ woman.firstname }} {{ woman.lastname }}
+
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endfor %}
 {% endblock %}

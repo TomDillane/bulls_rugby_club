@@ -10,6 +10,7 @@ nav .brand-logo {
 
 nav ul a {
     color: #d8cdcd;
+    margin-top: 20px;
 }
 
 .fa-bars {
@@ -89,6 +90,32 @@ nav li:hover {
 }
 
 /* sign up */
+/* teams */
+
+.team-name {
+    font-family: 'Patua One', cursive;
+    color: #d8cdcd;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.team-detail {
+    text-transform: capitalize;
+}
+
+.player-detail {
+    border-radius: 5px;
+}
+
+.player-pos {
+    font-family: 'Patua One', cursive;
+}
+
+.player-name {
+    font-family: 'Kiwi Maru', serif;
+}
+
+/* teams */
 /* Media Queries */
 
 @media only screen and (max-width: 992px) {
