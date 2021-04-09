@@ -13,6 +13,12 @@ function showpos() {
     document.getElementById('gender-select').style.display = 'block';
 }
 
-
-
-
+$('#player').change(function () {
+    if(this.checked) {
+        $('#male').prop('required', true);
+        $('#pos-selector').prop('required', true);
+    } else {
+        $('#male').prop('required', false);
+        $('#pos-selector').prop('required', false);
+    }
+});
