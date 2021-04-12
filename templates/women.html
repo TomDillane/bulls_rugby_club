@@ -6,24 +6,23 @@
         <h3 class="center-align">Women's Team</h3>
     </div>
 </div>
-{% for woman in women %}
 
 <div class="row">
-    <div class="col s12 m8 offset-m2">
-        <ul class="collection team-detail">
-            <li class="collection-item  indigo lighten-4 avatar player-detail">
-                <i class="fas fa-football-ball red"></i>
-                <span class="title player-pos">{{ woman.position }}</span>
-
-                <p class="player-name">
-                    <i class="fas fa-running red"></i>
-                    {{ woman.firstname }} {{ woman.lastname }}
-
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-        </ul>
+    {% for woman in women %}
+    <div class="col s12 m3">
+        <div class="card team-detail">
+            <div class="card-image player-pos">
+                <img src="static/img/player-prof.jpg">
+                <span class="card-title">{{ woman.position }}</span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+            <div class="card-content player-name">
+                <p>{{ woman.firstname }} {{ woman.lastname }}</p>
+            </div>
+        </div>
     </div>
-</div>
 {% endfor %}
+</div>
+
+
 {% endblock %}
