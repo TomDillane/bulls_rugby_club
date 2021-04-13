@@ -19,11 +19,21 @@
             <div class="card-content player-name">
                 <p>{{ man.firstname }} {{ man.lastname }}</p>
             </div>
+                    {% if session.user|lower == man.username|lower %}
+            <div class="switch">
+                <label>
+                    Off
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                    On
+                </label>
+            </div>
+                    {% endif %}
+            
         </div>
     </div>
-{% endfor %}
+    {% endfor %}
 </div>
 
 
 {% endblock %}
-
