@@ -97,6 +97,7 @@ def gameorg():
         
         gameorg = {
             "team": request.form.get("team-opt").lower(),
+            "date": request.form.get("game-date"),
             "opposition": request.form.get("opposition").lower(),
             "venue": request.form.get("venue").lower()
         }
