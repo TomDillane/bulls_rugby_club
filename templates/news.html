@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="center-align">Club News</h2>
+
+<div>
+    {% for story in news %}
+    <ul class="collection">
+      <li class="collection-item">The {{ story.team }} play {{ story.opposition }} at
+        {{ story.venue }} on
+        {{ story.date }}!! All support welcome!</li>
+    </ul>
+            
+    
+    
+        <!--
+        {{ story.team }}
+        {{ story.opposition }}
+        {{ story.venue }}
+        {{ story.date }}
+        -->
+    
+</div>
+{% endfor %}
+{% endblock %}
