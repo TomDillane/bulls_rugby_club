@@ -14,12 +14,7 @@
             <div class="card-image player-pos">
                 <img src="static/img/player-prof.jpg">
                 <span class="card-title">{{ man.position }}</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
-            <div class="card-content player-name">
-                <p>{{ man.firstname }} {{ man.lastname }}</p>
-            </div>
-                    {% if session.user|lower == man.username|lower %}
+                <a class="right halfway-fab waves-effect waves-light">  {% if session.user|lower == man.username|lower %}
             <div class="switch">
                 <label>
                     Off
@@ -28,7 +23,12 @@
                     On
                 </label>
             </div>
-                    {% endif %}
+                    {% endif %}</a>
+            </div>
+            <div class="card-content player-name">
+                <p>{{ man.firstname }} {{ man.lastname }}</p>
+            </div>
+                    
             
         </div>
     </div>
