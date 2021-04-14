@@ -26,14 +26,20 @@ def home_page():
 
 @app.route("/get_men_team")
 def get_men_team():
-    men = mongo.db.users.find( { "gender": "male"})
+    men = mongo.db.users.find({"gender": "male"})
     return render_template("men.html", men=men)
 
 
 @app.route("/get_women_team")
 def get_women_team():
-    women = mongo.db.users.find( { "gender": "female"})
+    women = mongo.db.users.find({"gender": "female"})
     return render_template("women.html", women=women)
+
+
+@app.route("/news")
+def news():
+    news = mongo.db.game_schedule.find()
+    return render_template("news.html", news=news)
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -72,7 +78,8 @@ def login():
             if check_password_hash(
                     user_exists["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username").capitalize()))
+                flash("Welcome, {}".format(
+                    request.form.get("username").capitalize()))
                 return redirect(url_for("home_page", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
@@ -94,7 +101,7 @@ def logout():
 @app.route("/gameorg", methods=["GET", "POST"])
 def gameorg():
     if request.method == "POST":
-        
+
         gameorg = {
             "team": request.form.get("team-opt").lower(),
             "date": request.form.get("game-date"),
