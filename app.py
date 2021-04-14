@@ -72,7 +72,7 @@ def login():
             if check_password_hash(
                     user_exists["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
+                flash("Welcome, {}".format(request.form.get("username").capitalize()))
                 return redirect(url_for("home_page", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
@@ -82,6 +82,13 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
     return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    flash("You have successfully logged out of your session!")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
