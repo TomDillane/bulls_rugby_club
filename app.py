@@ -91,6 +91,21 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/gameorg", methods=["GET", "POST"])
+def gameorg():
+    if request.method == "POST":
+        
+        gameorg = {
+            "team": request.form.get("team-opt").lower(),
+            "opposition": request.form.get("opposition").lower(),
+            "venue": request.form.get("venue").lower()
+        }
+        mongo.db.game_schedule.insert_one(gameorg)
+
+        flash("Game Fixture Entered!")
+    return render_template("gameorg.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
