@@ -116,6 +116,13 @@ nav li:hover {
 }
 
 /* teams */
+/* results */
+
+.result-header {
+    text-transform: capitalize;
+}
+
+/* results */
 /* Media Queries */
 
 @media only screen and (max-width: 992px) {
