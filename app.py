@@ -114,6 +114,12 @@ def gameorg():
     return render_template("gameorg.html")
 
 
+@app.route("/gameresult")
+def gameresult():
+    news = mongo.db.game_schedule.find()
+    return render_template("gameresult.html", news=news)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
