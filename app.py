@@ -119,7 +119,9 @@ def gameorg():
             "team": request.form.get("team-opt").lower(),
             "date": request.form.get("game-date"),
             "opposition": request.form.get("opposition").lower(),
-            "venue": request.form.get("venue").lower()
+            "venue": request.form.get("venue").lower(),
+            "bulls-result": 'null',
+            "opp-result": 'null'
         }
         # insert in database
         mongo.db.game_schedule.insert_one(gameorg)
