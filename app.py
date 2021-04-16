@@ -26,18 +26,21 @@ def home_page():
 
 @app.route("/get_men_team")
 def get_men_team():
+    # filter for men in database
     men = mongo.db.users.find({"gender": "male"})
     return render_template("men.html", men=men)
 
 
 @app.route("/get_women_team")
 def get_women_team():
+    # filter for women in database
     women = mongo.db.users.find({"gender": "female"})
     return render_template("women.html", women=women)
 
 
 @app.route("/news")
 def news():
+    # return game schedule from database
     news = mongo.db.game_schedule.find()
     return render_template("news.html", news=news)
 
@@ -45,13 +48,16 @@ def news():
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
+        # check if user name exists 
         user_exists = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if user_exists:
+            # bring user back to signup page
             flash("Username already exists")
             return redirect(url_for("signup"))
 
+        # create object with user sign up details
         signup = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
@@ -61,6 +67,7 @@ def signup():
             "gender": request.form.get("gender"),
             "position": request.form.get("position")
         }
+        # insert in database
         mongo.db.users.insert_one(signup)
 
         session["current_user"] = request.form.get("username").lower()
@@ -74,7 +81,9 @@ def login():
         user_exists = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
+        # check username, if valid proceed to password check
         if user_exists:
+            # check user's password, if correct welcome user to home page
             if check_password_hash(
                     user_exists["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
@@ -82,10 +91,12 @@ def login():
                     request.form.get("username").capitalize()))
                 return redirect(url_for("home_page", username=session["user"]))
             else:
+                # if password incorrect, back to login page
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
+            # if username invalid, back to login page
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
     return render_template("login.html")
@@ -93,6 +104,7 @@ def login():
 
 @app.route("/logout")
 def logout():
+    # end user session
     flash("You have successfully logged out of your session!")
     session.pop("user")
     return redirect(url_for("login"))
@@ -101,6 +113,7 @@ def logout():
 @app.route("/gameorg", methods=["GET", "POST"])
 def gameorg():
     if request.method == "POST":
+        # create object for game schedule
 
         gameorg = {
             "team": request.form.get("team-opt").lower(),
@@ -108,6 +121,7 @@ def gameorg():
             "opposition": request.form.get("opposition").lower(),
             "venue": request.form.get("venue").lower()
         }
+        # insert in database
         mongo.db.game_schedule.insert_one(gameorg)
 
         flash("Game Fixture Entered!")
@@ -116,6 +130,7 @@ def gameorg():
 
 @app.route("/gameresult")
 def gameresult():
+    # return game schedule from database
     news = mongo.db.game_schedule.find()
     return render_template("gameresult.html", news=news)
 

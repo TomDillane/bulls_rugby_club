@@ -17,6 +17,7 @@
 
 <body>
     <header>
+        <!-- desktop nav bar -->
         <div class="navbar-fixed">
             <nav class="indigo darken-4">
                 <div class="nav-wrapper">
@@ -36,7 +37,7 @@
                 </div>
             </nav>
         </div>
-
+        <!-- mobile nav bar -->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home_page') }}">Home</a></li>
             <li><a href="{{ url_for('news') }}">News</a></li>
@@ -49,6 +50,7 @@
             <li><a href="{{ url_for('login') }}">Log In</a></li>
         </ul>
     </header>
+    <!-- flash messages -->
     <section>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -62,7 +64,7 @@
         {% endif %}\
         {% endwith %}
     </section>
-
+    <!-- template content -->
     <main>
         {% block content %}
         {% endblock %}
