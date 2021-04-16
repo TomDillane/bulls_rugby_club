@@ -36,6 +36,25 @@ nav li:hover {
 }
 
 /* header */
+/* footer */
+
+.footer-unit {
+    padding-top: 20px;
+    padding-bottom: 2px;
+}
+
+.copyright {
+    color: #d8cdcd;
+}
+
+.social-item {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 30px;
+    color: #d8cdcd;
+}
+
+/* footer */
 /* base */
 .flash-message {
     margin-top: 50px;
@@ -63,26 +82,6 @@ nav li:hover {
 }
 
 /* home */
-
-/* footer */
-
-.footer-unit {
-    padding-top: 20px;
-    padding-bottom: 2px;
-}
-
-.copyright {
-    color: #d8cdcd;
-}
-
-.social-item {
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 30px;
-    color: #d8cdcd;
-}
-
-/* footer */
 /* sign up */
 
 #gender-select, #position-select {
@@ -137,5 +136,4 @@ nav li:hover {
     }
 }
   
-
 /* Media Queries */
