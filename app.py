@@ -133,7 +133,7 @@ def gameorg():
 @app.route("/gameresult")
 def gameresult():
     # return game schedule from database
-    news = mongo.db.game_schedule.find()
+    news = mongo.db.game_schedule.find().sort("_id", -1)
     return render_template("gameresult.html", news=news)
 
 
