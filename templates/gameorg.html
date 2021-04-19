@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="center-align">Game Organisation</h2>
+<div class="row">
+    <div class="col s10 offset-s1 m4 offset-m4 red  page-heading">
+        <h3 class="center-align">Game Fixture</h3>
+    </div>
+</div>
 
 <!-- Game Schedule Form -->
 <form method="POST" action="{{ url_for('gameorg') }}">
