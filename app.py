@@ -48,7 +48,7 @@ def news():
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
-        # check if user name exists 
+        # check if user name exists
         user_exists = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
