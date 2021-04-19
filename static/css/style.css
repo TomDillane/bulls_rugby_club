@@ -120,12 +120,9 @@ nav li:hover {
 /* teams */
 /* results */
 
-.result-header {
-    text-transform: capitalize;
-}
-
-.game-detail {
-    text-transform: capitalize;
+.result-date {
+    color: #d8cdcd;
+    font-family: 'Kiwi Maru', serif;
 }
 
 /* results */
