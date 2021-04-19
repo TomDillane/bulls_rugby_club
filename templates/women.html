@@ -2,12 +2,12 @@
 {% block content %}
 
 <div class="row">
-    <div class="col s10 offset-s1 m4 offset-m4 red  team-name">
+    <div class="col s10 offset-s1 m4 offset-m4 red  page-heading">
         <h3 class="center-align">Women's Team</h3>
     </div>
 </div>
 
-<!-- women's team detail -->
+<!-- men's team detail -->
 <div class="row">
     {% for woman in women %}
     <div class="col s12 m3">
@@ -15,7 +15,16 @@
             <div class="card-image player-pos">
                 <img src="static/img/player-prof.jpg">
                 <span class="card-title">{{ woman.position }}</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                <a class="right halfway-fab waves-effect waves-light"> {% if session.user|lower == woman.username|lower %}
+                    <div class="switch">
+                        <label>
+                            Off
+                            <input type="checkbox">
+                            <span class="lever"></span>
+                            On
+                        </label>
+                    </div>
+                    {% endif %}</a>
             </div>
             <div class="card-content player-name">
                 <p>{{ woman.firstname }} {{ woman.lastname }}</p>
