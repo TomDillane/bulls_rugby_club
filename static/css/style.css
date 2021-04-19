@@ -63,6 +63,16 @@ nav li:hover {
 }
 
 /* base */
+/* common styles */
+
+.page-heading {
+    font-family: 'Patua One', cursive;
+    color: #d8cdcd;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+/* common styles */
 /* home */
 
 .img-size {
@@ -91,13 +101,6 @@ nav li:hover {
 /* sign up */
 /* teams */
 
-.team-name {
-    font-family: 'Patua One', cursive;
-    color: #d8cdcd;
-    border-radius: 5px;
-    margin-top: 30px;
-}
-
 .team-detail {
     text-transform: capitalize;
 }
@@ -118,6 +121,10 @@ nav li:hover {
 /* results */
 
 .result-header {
+    text-transform: capitalize;
+}
+
+.game-detail {
     text-transform: capitalize;
 }
 
