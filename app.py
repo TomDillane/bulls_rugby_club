@@ -41,8 +41,8 @@ def get_women_team():
 @app.route("/news")
 def news():
     # return game schedule from database
-    news = mongo.db.game_schedule.find()
-    return render_template("news.html", news=news)
+    games = mongo.db.game_schedule.find()
+    return render_template("news.html", games=games)
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -133,8 +133,25 @@ def gameorg():
 @app.route("/gameresult")
 def gameresult():
     # return game schedule from database
-    news = mongo.db.game_schedule.find().sort("_id", -1)
-    return render_template("gameresult.html", news=news)
+    games = mongo.db.game_schedule.find().sort("_id", -1)
+    return render_template("gameresult.html", games=games)
+
+
+@app.route("/update_score/<game_id>", methods=["GET", "POST"])
+def update_score(game_id):
+    if request.method == "POST":
+        # create object for game schedule
+
+        score = {
+            "bulls-result": request.form.get("bullsresult"),
+            "opp-result": request.form.get("oppresult")
+        }
+        # insert in database
+        mongo.db.game_schedule.update({"_id": ObjectId(game_id)}, score)
+        flash("Result Updated!")
+
+    game = mongo.db.game_schedule.find_one({"_id": ObjectId(game_id)})
+    return render_template("update_score.html", game=game)
 
 
 if __name__ == "__main__":
