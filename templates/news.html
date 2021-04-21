@@ -4,22 +4,12 @@
 <h2 class="center-align">Club News</h2>
 
 <div>
-    {% for story in news %}
+    {% for game in games %}
     <ul class="collection">
-      <li class="collection-item">The {{ story.team }} play {{ story.opposition }} at
-        {{ story.venue }} on
-        {{ story.date }}!! All support welcome!</li>
-    </ul>
-            
-    
-    
-        <!--
-        {{ story.team }}
-        {{ story.opposition }}
-        {{ story.venue }}
-        {{ story.date }}
-        -->
-    
+      <li class="collection-item">The {{ game.team }} play {{ game.opposition }} at
+        {{ game.venue }} on
+        {{ game.date }}!! All support welcome!</li>
+    </ul>    
 </div>
 {% endfor %}
 {% endblock %}
