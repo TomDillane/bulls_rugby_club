@@ -8,12 +8,12 @@
 </div>
 
 <table>
-    {% for story in news %}
+    {% for game in games %}
     <thead>
         <tr class="indigo darken-4">
             <th></th>
-            <th class="result-date">{{ story.date }}</th>
-            <th><a href="" class="btn-small indigo">Edit Score</a></th>
+            <th class="result-date">{{ game.date }}</th>
+            <th><a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small indigo">Edit Score</a></th>
         </tr>
         <tr>
             <th>Venue</th>
@@ -24,14 +24,14 @@
 
     <tbody>
         <tr>
-            <td>{{ story.venue }}</td>
-            <td>{{ story.team }}</td>
-            <td>{{ story.bullsresult }}</td>
+            <td>{{ game.venue }}</td>
+            <td>{{ game.team }}</td>
+            <td>{{ game.bullsresult }}</td>
         </tr>
         <tr>
-            <td>{{ story.venue }}</td>
-            <td>{{ story.opposition }}</td>
-            <td>{{ story.oppresult }}</td>
+            <td>{{ game.venue }}</td>
+            <td>{{ game.opposition }}</td>
+            <td>{{ game.oppresult }}</td>
         </tr>
         
     </tbody>
