@@ -6,6 +6,25 @@
 <!-- update score form -->
 <form method="POST" action="{{ url_for('update_score', game_id=game._id) }}">
     <div class="row">
+        <div hidden>
+            <div class="input-field col s12 m4">
+                <input id="team" name="team" type="text" value="{{game.team}}" class="validate" required>
+                <label for="team"></label>
+            </div>
+            <div class="input-field col s12 m4">
+                <input id="date" name="date" type="text" value="{{game.date}}" class="validate" required>
+                <label for="date"></label>
+            </div>
+            <div class="input-field col s12 m4">
+                <input id="opposition" name="opposition" type="text" value="{{game.opposition}}" class="validate"
+                    required>
+                <label for="opposition"></label>
+            </div>
+            <div class="input-field col s12 m4">
+                <input id="venue" name="venue" type="text" value="{{game.venue}}" class="validate" required>
+                <label for="venue"></label>
+            </div>
+        </div>
         <div class="input-field col s12 m4">
             <input id="bullsresult" name="bullsresult" type="text" class="validate" required>
             <label for="bullsresult"></label>
