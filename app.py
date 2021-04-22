@@ -120,8 +120,8 @@ def gameorg():
             "date": request.form.get("game-date"),
             "opposition": request.form.get("opposition").lower(),
             "venue": request.form.get("venue").lower(),
-            "bulls-result": 'null',
-            "opp-result": 'null'
+            "bullsresult": 'null',
+            "oppresult": 'null'
         }
         # insert in database
         mongo.db.game_schedule.insert_one(gameorg)
@@ -140,13 +140,17 @@ def gameresult():
 @app.route("/update_score/<game_id>", methods=["GET", "POST"])
 def update_score(game_id):
     if request.method == "POST":
-        # create object for game schedule
+        # create object for game result
 
         score = {
-            "bulls-result": request.form.get("bullsresult"),
-            "opp-result": request.form.get("oppresult")
+            "team": request.form.get("team").lower(),
+            "date": request.form.get("date"),
+            "opposition": request.form.get("opposition").lower(),
+            "venue": request.form.get("venue").lower(),
+            "bullsresult": request.form.get("bullsresult"),
+            "oppresult": request.form.get("oppresult")
         }
-        # insert in database
+        # update dictionary in database
         mongo.db.game_schedule.update({"_id": ObjectId(game_id)}, score)
         flash("Result Updated!")
 
