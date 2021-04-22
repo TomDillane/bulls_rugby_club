@@ -125,7 +125,32 @@ nav li:hover {
     font-family: 'Kiwi Maru', serif;
 }
 
+.result-table-head {
+    font-family: 'Kiwi Maru', serif;
+    color: #d8cdcd;
+    font-size: 20px;
+}
+
+.result-table {
+    text-transform: capitalize;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 20px;
+}
+
 /* results */
+/* update score */
+
+.update-head {
+    font-family: 'Patua One', cursive;
+    color: #d8cdcd;
+}
+
+.teams {
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+/* update score */
 /* Media Queries */
 
 @media only screen and (max-width: 992px) {

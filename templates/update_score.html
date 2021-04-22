@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h2 class="center-align">Update Score</h2>
+<div class="row">
+    <div class="col s10 offset-s1 m4 offset-m4 red  page-heading">
+        <h3 class="center-align">Update Score</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col s10 offset-s1 m4 offset-m4 indigo lighten-1 update-head">
+        <h4 class="center-align">{{game.date}}</h3>
+    </div>
+</div>
 
 <!-- update score form -->
 <form method="POST" action="{{ url_for('update_score', game_id=game._id) }}">
@@ -25,18 +33,24 @@
                 <label for="venue"></label>
             </div>
         </div>
-        <div class="input-field col s12 m4">
+        <div class="col s12 m3 center-align teams">
+            <p>{{game.team}}</p>
+        </div>
+        <div class="input-field col s4 offset-s4 m1">
             <input id="bullsresult" name="bullsresult" type="text" class="validate" required>
             <label for="bullsresult"></label>
         </div>
-        <div class="input-field col s12 m4 offset-m2">
+        <div class="col s12 m3 center-align teams">
+            <p>{{game.opposition}}</p>
+        </div>
+        <div class="input-field col s4 offset-s4 m1">
             <input id="oppresult" name="oppresult" type="text" class="validate" required>
             <label for="oppresult"></label>
         </div>
     </div>
     <div class="row">
         <div class="col s12 center-align">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Update Scores</button>
+            <button class="btn waves-effect waves-light red" type="submit" name="action">Update Scores</button>
         </div>
     </div>
 </form>

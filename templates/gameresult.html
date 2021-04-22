@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="row">
-    <div class="col s10 offset-s1 m4 offset-m4 red  page-heading">
+    <div class="col s12 red  page-heading">
         <h3 class="center-align">Game Results</h3>
     </div>
 </div>
@@ -10,28 +10,28 @@
 <table>
     {% for game in games %}
     <thead>
-        <tr class="indigo darken-4">
-            <th></th>
-            <th class="result-date">{{ game.date }}</th>
-            <th><a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small indigo">Edit Score</a></th>
-        </tr>
-        <tr>
-            <th>Venue</th>
-            <th>Team</th>
+        <tr class="result-table-head indigo lighten-1">
+            <th>Venue / Date</th>
+            <th>Teams</th>
             <th>Score</th>
         </tr>
     </thead>
 
-    <tbody>
-        <tr>
+    <tbody class="result-table">
+        <tr class="">
             <td>{{ game.venue }}</td>
-            <td>{{ game.team }}</td>
+            <td>{{ game.team }} Bulls Team</td>
             <td>{{ game.bullsresult }}</td>
         </tr>
-        <tr>
-            <td>{{ game.venue }}</td>
+        <tr class="">
+            <td>{{ game.date }}</td>
             <td>{{ game.opposition }}</td>
             <td>{{ game.oppresult }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small red">Edit</a></td>
         </tr>
         
     </tbody>
