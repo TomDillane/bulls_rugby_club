@@ -81,6 +81,7 @@ def login():
         user_exists = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
+
         # check username, if valid proceed to password check
         if user_exists:
             # check user's password, if correct welcome user to home page
@@ -152,6 +153,7 @@ def update_score(game_id):
         }
         # update dictionary in database
         mongo.db.game_schedule.update({"_id": ObjectId(game_id)}, score)
+        return redirect(url_for("gameresult"))
         flash("Result Updated!")
 
     game = mongo.db.game_schedule.find_one({"_id": ObjectId(game_id)})
