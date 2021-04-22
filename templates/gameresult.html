@@ -3,7 +3,7 @@
 
 <div class="row">
     <div class="col s12 red  page-heading">
-        <h3 class="center-align">Game Results</h3>
+        <h3 class="center-align">Fixtures and Results</h3>
     </div>
 </div>
 
@@ -31,7 +31,10 @@
         <tr>
             <td></td>
             <td></td>
-            <td><a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small red">Edit</a></td>
+            <td>
+                {% if session.user|lower == "manager"|lower %}
+                <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small red">Edit</a></td>
+                {% endif %}
         </tr>
         
     </tbody>
