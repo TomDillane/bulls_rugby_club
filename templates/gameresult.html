@@ -6,10 +6,14 @@
         <h3 class="center-align">Fixtures and Results</h3>
     </div>
 </div>
+ 
 
 <table>
-    {% for game in games %}
+    
+   {% for game in games %}
+    
     <thead>
+        
         <tr class="result-table-head indigo lighten-1">
             <th>Venue / Date</th>
             <th>Teams</th>
@@ -18,6 +22,7 @@
     </thead>
 
     <tbody class="result-table">
+        
         <tr class="">
             <td>{{ game.venue }}</td>
             <td>{{ game.team }} Bulls Team</td>
@@ -28,17 +33,40 @@
             <td>{{ game.opposition }}</td>
             <td>{{ game.oppresult }}</td>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>
-                {% if session.user|lower == "manager"|lower %}
-                <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small red">Edit</a></td>
-                {% endif %}
-        </tr>
         
+        <tr>
+            
+            <td></td>
+            <td></td>
+
+            <td>
+                
+                {% if session.user|lower == "manager"|lower %}
+                
+                <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small red">Edit</a>
+                {% endif %}
+                
+                {% for man in men %}
+                {% if session.user|lower == man.username|lower %}
+              <a class="right halfway-fab waves-effect waves-light"> 
+                    <div class="switch">
+                        <label>
+                            Off
+                            <input type="checkbox">
+                            <span class="lever"></span>
+                            On
+                        </label>
+                    </div>
+                    </a>   
+                    </td>  
+                    {% endif %}
+                  {% endfor %} 
+        </tr>
+          
+        
+        {% endfor %}
     </tbody>
-    {% endfor %}
+    
 </table>
 
 

@@ -135,7 +135,9 @@ def gameorg():
 def gameresult():
     # return game schedule from database
     games = mongo.db.game_schedule.find().sort("_id", -1)
-    return render_template("gameresult.html", games=games)
+    men = mongo.db.users.find({"gender": "male"})
+    women = mongo.db.users.find({"gender": "female"})
+    return render_template("gameresult.html", games=games, men=men, women=women)
 
 
 @app.route("/update_score/<game_id>", methods=["GET", "POST"])
