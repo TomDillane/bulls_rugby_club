@@ -26,13 +26,18 @@
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('home_page') }}">Home</a></li>
                         <li><a href="{{ url_for('news') }}">News</a></li>
+                        {% if session.user|lower == "manager"|lower %}
                         <li><a href="{{ url_for('gameorg') }}">Game Schedule</a></li>
+                        {% endif %}
                         <li><a href="{{ url_for('gameresult') }}">Game Details</a></li>
                         <li><a href="{{ url_for('get_men_team') }}">Men's Team</a></li>
                         <li><a href="{{ url_for('get_women_team') }}">Women's Team</a></li>
+                        {% if session.user %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        {% else %}
                         <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
                         <li><a href="{{ url_for('login') }}">Log In</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </nav>
@@ -41,13 +46,18 @@
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home_page') }}">Home</a></li>
             <li><a href="{{ url_for('news') }}">News</a></li>
+            {% if session.user|lower == "manager"|lower %}
             <li><a href="{{ url_for('gameorg') }}">Game Schedule</a></li>
+            {% endif %}
             <li><a href="{{ url_for('gameresult') }}">Game Details</a></li>
             <li><a href="{{ url_for('get_men_team') }}">Men's Team</a></li>
             <li><a href="{{ url_for('get_women_team') }}">Women's Team</a></li>
+            {% if session.user %}
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
             <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>
+            {% endif %}
         </ul>
     </header>
     <!-- flash messages -->
