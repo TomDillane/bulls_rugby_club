@@ -44,10 +44,12 @@
                 {% if session.user|lower == "manager"|lower %}
                 
                 <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small red">Edit</a>
-                {% endif %}
                 
-                {% for man in men %}
-                {% if session.user|lower == man.username|lower %}
+                
+                {% elif session.user|lower != "manager"|lower %}
+                    {% for player in players %}
+                    {% if session.user|lower == player.username|lower %}
+
               <a class="right halfway-fab waves-effect waves-light"> 
                     <div class="switch">
                         <label>
@@ -60,20 +62,15 @@
                     </a>   
                     </td>  
                     {% endif %}
-                  {% endfor %} 
+                    {% endfor %}
+                    
+                  {% endif %}
         </tr>
-          
-        
+
         {% endfor %}
     </tbody>
     
 </table>
-
-
-
-
-
-
 
 
 {% endblock %}

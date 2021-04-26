@@ -134,10 +134,9 @@ def gameorg():
 @app.route("/gameresult")
 def gameresult():
     # return game schedule from database
+    players = mongo.db.users.find({"type": "player"})
     games = mongo.db.game_schedule.find().sort("_id", -1)
-    men = mongo.db.users.find({"gender": "male"})
-    women = mongo.db.users.find({"gender": "female"})
-    return render_template("gameresult.html", games=games, men=men, women=women)
+    return render_template("gameresult.html", games=games, players=players)
 
 
 @app.route("/update_score/<game_id>", methods=["GET", "POST"])
