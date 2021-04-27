@@ -15,19 +15,17 @@
             <div class="card-image player-pos">
                 <img src="static/img/player-prof.jpg">
                 <span class="card-title">{{ woman.position }}</span>
-                <a class="right halfway-fab waves-effect waves-light"> {% if session.user|lower == woman.username|lower %}
-                    <div class="switch">
-                        <label>
-                            Off
-                            <input type="checkbox">
-                            <span class="lever"></span>
-                            On
-                        </label>
-                    </div>
-                    {% endif %}</a>
+
             </div>
             <div class="card-content player-name">
-                <p>{{ woman.firstname }} {{ woman.lastname }}</p>
+                <span class="player-det">
+                    {{ woman.firstname }} {{ woman.lastname }}
+                </span>
+                {% if session.user|lower == woman.username|lower %}
+                <span class="right-align player-det">
+                    <a href="" class="btn-small red">Play</a>
+                </span>
+                {% endif %}
             </div>
         </div>
     </div>

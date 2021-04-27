@@ -117,6 +117,10 @@ nav li:hover {
     font-family: 'Kiwi Maru', serif;
 }
 
+.player-det {
+    display: inline;
+}
+
 /* teams */
 /* results */
 

@@ -9,9 +9,9 @@
  
 
 <table>
-    
+     
    {% for game in games %}
-    
+   
     <thead>
         
         <tr class="result-table-head indigo lighten-1">
@@ -44,29 +44,22 @@
                 {% if session.user|lower == "manager"|lower %}
                 
                 <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small red">Edit</a>
+                {% endif %}
+                 {% for player in players %}
                 
+                {% if session.user|lower == player.username|lower %}
                 
-                {% elif session.user|lower != "manager"|lower %}
-                    {% for player in players %}
-                    {% if session.user|lower == player.username|lower %}
-
-              <a class="right halfway-fab waves-effect waves-light"> 
-                    <div class="switch">
-                        <label>
-                            Off
-                            <input type="checkbox">
-                            <span class="lever"></span>
-                            On
-                        </label>
-                    </div>
-                    </a>   
+               
+                
+                <p>{{ player.username }}, click here to update game availability</p>
+              <a href="" class="btn-small red center-align">Set</a>  
                     </td>  
-                    {% endif %}
-                    {% endfor %}
                     
-                  {% endif %}
+                    
+                    {% endif %}
+                  
         </tr>
-
+{% endfor %}
         {% endfor %}
     </tbody>
     
