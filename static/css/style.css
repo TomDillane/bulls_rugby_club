@@ -135,6 +135,12 @@ nav li:hover {
     font-size: 20px;
 }
 
+.player-instruct {
+    font-family: 'Kiwi Maru', serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
 .result-table {
     text-transform: capitalize;
     font-family: 'Kiwi Maru', serif;

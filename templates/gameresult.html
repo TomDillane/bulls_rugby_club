@@ -6,14 +6,26 @@
         <h3 class="center-align">Fixtures and Results</h3>
     </div>
 </div>
- 
+{% for player in players %}
+
+{% if session.user|lower == player.username|lower %}
+
+
+<div class="row">
+    <div class="col s12 center-align player-instruct">
+        <p>{{ player.username.capitalize() }}, don't forget to update your game availability!</p>
+        <a href="" class="btn-small red center-align">Game Attendance</a>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
 
 <table>
-     
-   {% for game in games %}
-   
+
+    {% for game in games %}
+
     <thead>
-        
+
         <tr class="result-table-head indigo lighten-1">
             <th>Venue / Date</th>
             <th>Teams</th>
@@ -22,7 +34,7 @@
     </thead>
 
     <tbody class="result-table">
-        
+
         <tr class="">
             <td>{{ game.venue }}</td>
             <td>{{ game.team }} Bulls Team</td>
@@ -33,36 +45,27 @@
             <td>{{ game.opposition }}</td>
             <td>{{ game.oppresult }}</td>
         </tr>
-        
+
         <tr>
-            
+
             <td></td>
             <td></td>
 
             <td>
-                
+
                 {% if session.user|lower == "manager"|lower %}
-                
+
                 <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small red">Edit</a>
                 {% endif %}
-                 {% for player in players %}
-                
-                {% if session.user|lower == player.username|lower %}
-                
-               
-                
-                <p>{{ player.username }}, click here to update game availability</p>
-              <a href="" class="btn-small red center-align">Set</a>  
-                    </td>  
-                    
-                    
-                    {% endif %}
-                  
+
+            </td>
+
+
         </tr>
-{% endfor %}
+
         {% endfor %}
     </tbody>
-    
+
 </table>
 
 
