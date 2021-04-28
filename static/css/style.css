@@ -148,6 +148,19 @@ nav li:hover {
 }
 
 /* results */
+/* availability */
+
+.team-avail {
+    text-transform: capitalize;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 20px;
+}
+
+#meet-select {
+    display: none;
+}
+
+/* availability */
 /* update score */
 
 .update-head {
