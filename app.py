@@ -134,9 +134,9 @@ def gameorg():
 @app.route("/gameresult")
 def gameresult():
     # return game schedule from database
-    players = mongo.db.users.find({"type": "player"})
-    games = mongo.db.game_schedule.find().sort("_id", -1)
-    return render_template("gameresult.html", games=games, players=players)
+    women = mongo.db.users.find({"gender": "female"})
+    games = mongo.db.game_schedule.find({"team": "women"}).sort("_id", -1)
+    return render_template("gameresult.html", games=games, women=women)
 
 
 @app.route("/update_score/<game_id>", methods=["GET", "POST"])
@@ -159,6 +159,28 @@ def update_score(game_id):
 
     game = mongo.db.game_schedule.find_one({"_id": ObjectId(game_id)})
     return render_template("update_score.html", game=game)
+
+
+@app.route("/avail", methods=["GET", "POST"])
+def avail():
+    women = mongo.db.users.find({"gender": "female"})
+    date = mongo.db.game_schedule.find(
+        {"team": "women", "bullsresult": "null"}).sort("_id", -1)
+    if request.method == "POST":
+        # create object for player availability option
+
+        avail = {
+            "player": session["user"],
+            "team": "women",
+            "date": request.form.get("date-opt"),
+            "available": request.form.get("avail").lower(),
+            "meet": request.form.get("meet", "NA").lower()
+        }
+        # insert in database
+        mongo.db.player_avail.insert_one(avail)
+
+        flash("Successfully entered availability!")
+    return render_template("player_avail.html", women=women, date=date)
 
 
 if __name__ == "__main__":
