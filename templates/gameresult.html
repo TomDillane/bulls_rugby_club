@@ -6,15 +6,15 @@
         <h3 class="center-align">Fixtures and Results</h3>
     </div>
 </div>
-{% for player in players %}
+{% for woman in women %}
 
-{% if session.user|lower == player.username|lower %}
+{% if session.user|lower == woman.username|lower %}
 
 
 <div class="row">
     <div class="col s12 center-align player-instruct">
-        <p>{{ player.username.capitalize() }}, don't forget to update your game availability!</p>
-        <a href="" class="btn-small red center-align">Game Attendance</a>
+        <p>{{ woman.username.capitalize() }}, don't forget to update your game availability!</p>
+        <a href="{{ url_for('avail') }}" class="btn-small red center-align">Game Attendance</a>
     </div>
 </div>
 {% endif %}
