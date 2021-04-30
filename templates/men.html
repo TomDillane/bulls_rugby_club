@@ -15,16 +15,7 @@
             <div class="card-image player-pos">
                 <img src="static/img/player-prof.jpg">
                 <span class="card-title">{{ man.position }}</span>
-                <a class="right halfway-fab waves-effect waves-light"> {% if session.user|lower == man.username|lower %}
-                    <div class="switch">
-                        <label>
-                            Off
-                            <input type="checkbox">
-                            <span class="lever"></span>
-                            On
-                        </label>
-                    </div>
-                    {% endif %}</a>
+               
             </div>
             <div class="card-content player-name">
                 <p>{{ man.firstname }} {{ man.lastname }}</p>

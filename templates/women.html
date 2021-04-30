@@ -17,15 +17,8 @@
                 <span class="card-title">{{ woman.position }}</span>
 
             </div>
-            <div class="card-content player-name">
-                <span class="player-det">
-                    {{ woman.firstname }} {{ woman.lastname }}
-                </span>
-                {% if session.user|lower == woman.username|lower %}
-                <span class="right-align player-det">
-                    <a href="" class="btn-small red">Play</a>
-                </span>
-                {% endif %}
+           <div class="card-content player-name">
+                <p>{{ woman.firstname }} {{ woman.lastname }}</p>
             </div>
         </div>
     </div>
