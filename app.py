@@ -176,9 +176,11 @@ def avail():
             "available": request.form.get("avail").lower(),
             "meet": request.form.get("meet", "NA").lower()
         }
-        # insert in database
-        mongo.db.player_avail.insert_one(avail)
+        this_match = avail['date']
+        mongo.db.player_avail.update(
+            {"date": this_match}, avail, upsert=True)
 
+        # insert in database
         flash("Successfully entered availability!")
     return render_template("player_avail.html", women=women, date=date)
 
