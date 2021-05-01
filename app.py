@@ -163,8 +163,7 @@ def update_score(game_id):
 
 @app.route("/avail", methods=["GET", "POST"])
 def avail():
-    women = mongo.db.users.find({"gender": "female"})
-    date = mongo.db.game_schedule.find(
+    w_game_date = mongo.db.game_schedule.find(
         {"team": "women", "bullsresult": "null"}).sort("_id", -1)
     if request.method == "POST":
         # create object for player availability option
@@ -177,12 +176,13 @@ def avail():
             "meet": request.form.get("meet", "NA").lower()
         }
         this_match = avail['date']
+        this_player = avail['player']
         mongo.db.player_avail.update(
-            {"date": this_match}, avail, upsert=True)
+            {"date": this_match, "player": this_player}, avail, upsert=True)
 
         # insert in database
         flash("Successfully entered availability!")
-    return render_template("player_avail.html", women=women, date=date)
+    return render_template("player_avail.html", w_game_date=w_game_date)
 
 
 if __name__ == "__main__":
