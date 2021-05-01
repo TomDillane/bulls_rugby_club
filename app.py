@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -80,7 +81,6 @@ def login():
     if request.method == "POST":
         user_exists = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
 
         # check username, if valid proceed to password check
         if user_exists:
@@ -164,7 +164,7 @@ def update_score(game_id):
 @app.route("/avail", methods=["GET", "POST"])
 def avail():
     w_game_date = mongo.db.game_schedule.find(
-        {"team": "women", "bullsresult": "null"}).sort("_id", -1)
+        {"team": "women", "bullsresult": "null"}).sort("date", -1)
     if request.method == "POST":
         # create object for player availability option
 
