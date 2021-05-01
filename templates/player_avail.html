@@ -23,8 +23,8 @@
         </div>
         <div class="input-field col s4">
             <select name="date-opt" id="date-opt" required>
-                {% for d in date %}
-                <option value="{{ d.date }}"{% if loop.first %} SELECTED{% endif %}>{{ d.date }}</option>
+                {% for wgame in w_game_date %}
+                <option value="{{ wgame.date }}"{% if loop.first %} SELECTED{% endif %}>{{ wgame.date }}</option>
                 {% endfor %}
             </select>
             <label>Select Game Date</label>
