@@ -160,6 +160,18 @@ nav li:hover {
 }
 
 /* teams */
+/* fixture */
+
+.match-fixture {
+    background: url("../img/game-schedule_v2.jpg") no-repeat;
+    background-size: cover;
+}
+
+.input-field-game {
+    margin-top: 120px
+}
+
+/* fixture */
 /* results */
 
 .result-date {

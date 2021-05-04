@@ -8,53 +8,47 @@
 </div>
 
 <!-- Game Schedule Form -->
-<form method="POST" action="{{ url_for('gameorg') }}">
+<div class="match-fixture">
+    <form method="POST" action="{{ url_for('gameorg') }}">
 
-    <div class="row" id="team-select">
-        <div class="col s3">
-            <p>Select Team</p>
+        <div class="row" id="team-select">
+            
+            <div class="input-field-game col s12 m4 offset-m1">
+                <select name="team-opt" id="team-opt" required>
+                    <option value="" disabled selected>Team</option>
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                </select>
+                <label></label>
+            </div>
         </div>
-        <div class="input-field col s4">
-            <select name="team-opt" id="team-opt" required>
-                <option value="" disabled selected>Team</option>
-                <option value="men">Men</option>
-                <option value="women">Women</option>
-            </select>
-            <label>Select Team</label>
+        <div class="row" id="game-date-wrap">
+            
+            <div class="input-field-game col s12 m4 offset-m1">
+                <input type="text" id="game-date" name="game-date" placeholder="Date" class="datepicker">
+                <label for="game-date"></label>
+            </div>
         </div>
-    </div>
-    <div class="row" id="game-date-wrap">
-        <div class="col s3">
-            <p>Game Date</p>
+        <div class="row" id="opposition-wrap">
+            
+            <div class="input-field-game col s12 m4 offset-m1">
+                <input id="opposition" name="opposition" type="text" placeholder="Opposition" required>
+                <label for="opposition"></label>
+            </div>
         </div>
-        <div class="input-field col s12 m4">
-            <input type="text" id="game-date" name="game-date" class="datepicker">
-            <label for="game-date">Game Date</label>
+        <div class="row" id="venue-wrap">
+            
+            <div class="input-field-game col s12 m4 offset-m1">
+                <input id="venue" name="venue" type="text" placeholder="Venue" required>
+                <label for="venue"></label>
+            </div>
         </div>
-    </div>
-    <div class="row" id="opposition-wrap">
-        <div class="col s3">
-            <p>Opposition</p>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">Submit</button>
+            </div>
         </div>
-        <div class="input-field col s12 m4">
-            <input id="opposition" name="opposition" type="text" required>
-            <label for="opposition">Opposition</label>
-        </div>
-    </div>
-    <div class="row" id="venue-wrap">
-        <div class="col s3">
-            <p>Venue</p>
-        </div>
-        <div class="input-field col s12 m4">
-            <input id="venue" name="venue" type="text" required>
-            <label for="venue">Venue</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12 center-align">
-            <button class="btn waves-effect waves-light red" type="submit" name="action">Submit</button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>
 
 {% endblock %}
