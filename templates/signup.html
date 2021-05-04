@@ -3,87 +3,84 @@
 
 <div class="row">
     <div class="col s12 red  page-heading">
-        <h3 class="center-align">Sign Up</h3>
+        <h3 class="center-align">Sign Up and Take Your Seat at the Club!!</h3>
     </div>
 </div>
+<div class="signup">
+    <form class="signup-form" method="POST" action="{{ url_for('signup') }}">
+        <div class="row">
+            <div class="input-field col s12 m4 offset-m1">
+                <input id="username" name="username" type="text" class="validate signup-field" placeholder="Username" required>
+                <label for="username"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m4 offset-m1">
+                <input id="password" name="password" type="password" class="validate signup-field" placeholder="Password" required>
+                <label for="password"></label>
+            </div>
+        </div>
 
-<form method="POST" action="{{ url_for('signup') }}">
-    <div class="row">
+        <div class="row">
 
-        <div class="input-field col s12 m4">
-            <input id="username" name="username" type="text" class="validate" required>
-            <label for="username">Username</label>
+            <div class="input-field col s12 m4 offset-m1">
+                <input id="firstname" name="firstname" type="text" class="validate signup-field" placeholder="First Name" required>
+                <label for="firstname"></label>
+            </div>
         </div>
-        <div class="input-field col s12 m4 offset-m2">
-            <input id="password" name="password" type="password" class="validate" required>
-            <label for="password">Password</label>
+        <div class="row">
+            <div class="input-field col s12 m4 offset-m1">
+                <input id="lastname" name="lastname" type="text" class="validate signup-field" placeholder="Last Name" required>
+                <label for="lastname"></label>
+            </div>
         </div>
-    </div>
+        <div class="row" id="membership-select">
 
-    <div class="row">
+            <div class="input-field col s12 m4 offset-m1">
+                <select name="membership" id="member-selector" onchange="check()" required>
+                    <option value="" disabled selected class="signup-drop">Membership Type</option>
+                    <option value="volunteer">Volunteer</option>
+                    <option value="player">Player</option>
+                    <option value="social">Social</option>
 
-        <div class="input-field col s12 m4">
-            <input id="firstname" name="firstname" type="text" class="validate" required>
-            <label for="firstname">First Name</label>
+                </select>
+                <label></label>
+            </div>
         </div>
-        <div class="input-field col s12 m4 offset-m2">
-            <input id="lastname" name="lastname" type="text" class="validate" required>
-            <label for="lastname">Last Name</label>
-        </div>
-    </div>
-    <div class="row" id="membership-select">
-        <div class="col s3">
-            <p>Membership</p>
-        </div>
-        <div class="input-field col s4">
-            <select name="membership" id="member-selector" onchange="check()" required>
-                <option value="" disabled selected>Type</option>
-                <option value="volunteer">Volunteer</option>
-                <option value="player">Player</option>
-                <option value="social">Social</option>
+        <div class="row" id="gender-select">
+            
+            <div class="input-field col s12 m4 offset-m1">
+                <select name="gender" id="gender-selector">
+                    <option value="" disabled selected>Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
 
-            </select>
-            <label>Membership Type</label>
+                </select>
+                <label></label>
+            </div>
         </div>
-    </div>
-    <div class="row" id="gender-select">
-        <div class="col s3">
-            <p>Gender</p>
+        <div class="row" id="position-select">
+            
+            <div class="input-field col s12 m4 offset-m1">
+                <select name="position" id="pos-selector">
+                    <option value="" disabled selected>Position</option>
+                    <option value="front row">Front Row</option>
+                    <option value="second row">Second Row</option>
+                    <option value="back row">Back Row</option>
+                    <option value="half back">Half Back</option>
+                    <option value="center">Center</option>
+                    <option value="full back">Full Back</option>
+                </select>
+                <label></label>
+            </div>
         </div>
-        <div class="input-field col s4">
-            <select name="gender" id="gender-selector">
-                <option value="" disabled selected>Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-
-            </select>
-            <label>Gender Select
-            </label>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">Sign Up</button>
+            </div>
         </div>
-    </div>
-    <div class="row" id="position-select">
-        <div class="col s3">
-            <p>Position</p>
-        </div>
-        <div class="input-field col s4">
-            <select name="position" id="pos-selector">
-                <option value="" disabled selected>Position</option>
-                <option value="front row">Front Row</option>
-                <option value="second row">Second Row</option>
-                <option value="back row">Back Row</option>
-                <option value="half back">Half Back</option>
-                <option value="center">Center</option>
-                <option value="full back">Full Back</option>
-            </select>
-            <label>Playing Position</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12 center-align">
-            <button class="btn waves-effect waves-light red" type="submit" name="action">Sign Up</button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>
 
 {% endblock %}
 <!--<div class="row">
