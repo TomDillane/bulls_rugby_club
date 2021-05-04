@@ -99,6 +99,23 @@ nav li:hover {
 }
 
 /* sign up */
+/* log in */
+
+.login {
+    background: url("../img/login_v2.jpg") no-repeat;
+    background-size: cover;
+}
+
+.input-field {
+    display: block;
+    margin-top: 120px;
+}
+
+.login-field {
+    color: #d8cdcd;
+}
+
+/* log in */
 /* teams */
 
 .team-detail {

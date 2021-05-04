@@ -8,22 +8,26 @@
 </div>
 
 <!-- login form -->
-<form method="POST" action="{{ url_for('login') }}">
-    <div class="row">
-        <div class="input-field col s12 m4">
-            <input id="username" name="username" type="text" class="validate" required>
-            <label for="username">Username</label>
+<div class="login">
+    <form class="form-content" method="POST" action="{{ url_for('login') }}">
+        <div class="row">
+            <div class="input-field col s12 m4 offset-m1">
+                <input id="username" name="username" type="text" class="validate login-field" placeholder="Username" required>
+                <label for="username"></label>
+            </div>
         </div>
-        <div class="input-field col s12 m4 offset-m2">
-            <input id="password" name="password" type="password" class="validate" required>
-            <label for="password">Password</label>
+        <div class="row">
+            <div class="input-field col s12 m4 offset-m1">
+                <input id="password" name="password" type="password" class="validate login-field" placeholder="Password" required>
+                <label for="password"></label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col s12 center-align">
-            <button class="btn waves-effect waves-light red" type="submit" name="action">Log In</button>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">Log In</button>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
 
 {% endblock %}
