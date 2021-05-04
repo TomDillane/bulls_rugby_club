@@ -123,6 +123,8 @@ nav li:hover {
 .login {
     background: url("../img/login_v2.jpg") no-repeat;
     background-size: cover;
+    height: 90vh;
+    width: auto;
 }
 
 .input-field {
@@ -190,6 +192,13 @@ nav li:hover {
     text-transform: capitalize;
     font-family: 'Kiwi Maru', serif;
     font-size: 20px;
+}
+
+.game-avail {
+    background: url("../img/avail.jpg") no-repeat;
+    background-size: cover;
+    height: 90vh;
+    width: auto;
 }
 
 #meet-select {

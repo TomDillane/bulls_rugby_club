@@ -14,58 +14,52 @@
 </div>
 
 <!-- Player Avail Form -->
-<form method="POST" action="{{ url_for('avail') }}">
-    
-    
-   <div class="row" id="date-select">
-        <div class="col s3">
-            <p>Select Date</p>
-        </div>
-        <div class="input-field col s4">
-            <select name="date-opt" id="date-opt" required>
-                {% for wgame in w_game_date %}
-                <option value="{{ wgame.date }}"{% if loop.first %} SELECTED{% endif %}>{{ wgame.date }}</option>
-                {% endfor %}
-            </select>
-            <label>Select Game Date</label>
-        </div>
-    </div>
-     <div class="row" id="avail-select">
-        <div class="col s3">
-            <p>Available</p>
-        </div>
-        <div class="input-field col s4">
-            <select name="avail" id="avail-selector" onchange="check1()" required>
-                <option value="" disabled selected></option>
-                <option value="available">Available</option>
-                <option value="unavailable">Unavailable</option>
+<div class="game-avail">
+    <form method="POST" action="{{ url_for('avail') }}">
 
-            </select>
-            <label>Availability Select
-            </label>
-        </div>
-    </div>
-    <div class="row" id="meet-select">
-        <div class="col s3">
-            <p>Meet Team At</p>
-        </div>
-        <div class="input-field col s4">
-            <select name="meet" id="meet-selector">
-                <option value="" disabled selected></option>
-                <option value="clubhouse">Clubhouse</option>
-                <option value="gamevenue">Game Venue</option>
 
-            </select>
-            <label>Meeting Point
-            </label>
+        <div class="row" id="date-select">
+           
+            <div class="input-field col s12 m4 offset-m1">
+                <select name="date-opt" id="date-opt" required>
+                    {% for wgame in w_game_date %}                    
+                    <option value="{{ wgame.date }}" {% if loop.first %} SELECTED{% endif %}>{{ wgame.date }}</option>
+                    {% endfor %}
+                </select>
+                <label>Game Date</label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col s12 center-align">
-            <button class="btn waves-effect waves-light red" type="submit" name="action">Submit</button>
+        <div class="row" id="avail-select">
+            
+            <div class="input-field col s12 m4 offset-m1">
+                <select name="avail" id="avail-selector" onchange="check1()" required>
+                    <option value="" disabled selected>Can you play?</option>
+                    <option value="available">Available</option>
+                    <option value="unavailable">Unavailable</option>
+
+                </select>
+                <label></label>
+            </div>
         </div>
-    </div>
-    
-</form>
+        <div class="row" id="meet-select">
+            
+            <div class="input-field col s12 m4 offset-m1">
+                <select name="meet" id="meet-selector">
+                    <option value="" disabled selected>Where will you meet the team?</option>
+                    <option value="clubhouse">Clubhouse</option>
+                    <option value="gamevenue">Game Venue</option>
+
+                </select>
+                <label></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">Submit</button>
+            </div>
+        </div>
+
+    </form>
+</div>
 
 {% endblock %}
