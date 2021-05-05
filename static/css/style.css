@@ -163,12 +163,22 @@ nav li:hover {
 /* fixture */
 
 .match-fixture {
-    background: url("../img/game-schedule_v2.jpg") no-repeat;
+    background: url("../img/game-schedule_v3.jpg") no-repeat;
     background-size: cover;
 }
 
 .input-field-game {
     margin-top: 120px
+}
+
+::placeholder {
+    color: #d8cdcd;
+    font-family: 'Patua One', cursive;
+}
+
+.match-org {
+    color: #d8cdcd;
+    font-family: 'Patua One', cursive;
 }
 
 /* fixture */
