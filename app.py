@@ -118,13 +118,12 @@ def gameorg():
 
         gameorg = {
             "team": request.form.get("team-opt").lower(),
-            "date": request.form.get("game-date"),
+            "date": request.form.get("game-date").lower(),
             "opposition": request.form.get("opposition").lower(),
             "venue": request.form.get("venue").lower(),
             "bullsresult": 'TBC',
             "oppresult": 'TBC'
         }
-        print(request.form.get("game-date"))
         # insert in database
         mongo.db.game_schedule.insert_one(gameorg)
 
@@ -164,8 +163,11 @@ def update_score(game_id):
 
 @app.route("/avail", methods=["GET", "POST"])
 def avail():
-    w_game_date = mongo.db.game_schedule.find(
-        {"team": "women", "bullsresult": "TBC"}).sort("date", -1)
+    w_game_date = mongo.db.game_schedule.find({
+        "team": "women",
+        "bullsresult": "TBC"
+        }).sort('date', 1)
+
     if request.method == "POST":
         # create object for player availability option
 
