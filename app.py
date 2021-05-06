@@ -142,6 +142,15 @@ def gameresult():
     return render_template("gameresult.html", games=games, women=women)
 
 
+@app.route("/men_gameresult")
+def men_gameresult():
+    # return game schedule from database
+    men = mongo.db.users.find({"gender": "male"})
+    games = mongo.db.game_schedule.find(
+        {"team": "men"}).sort("match_date", -1)
+    return render_template("men_gameresult.html", games=games, men=men)
+
+
 @app.route("/update_score/<game_id>", methods=["GET", "POST"])
 def update_score(game_id):
     if request.method == "POST":
@@ -191,6 +200,33 @@ def avail():
         # insert in database
         flash("Successfully entered availability!")
     return render_template("player_avail.html", w_game_date=w_game_date)
+
+
+@app.route("/m_avail", methods=["GET", "POST"])
+def m_avail():
+    m_game_date = mongo.db.game_schedule.find({
+        "team": "men",
+        "bullsresult": "TBC"
+        }).sort('match_date', -1)
+
+    if request.method == "POST":
+        # create object for player availability option
+
+        avail = {
+            "player": session["user"],
+            "team": "women",
+            "date": request.form.get("date-opt"),
+            "available": request.form.get("avail").lower(),
+            "meet": request.form.get("meet", "NA").lower()
+        }
+        this_match = avail['date']
+        this_player = avail['player']
+        mongo.db.player_avail.update(
+            {"date": this_match, "player": this_player}, avail, upsert=True)
+
+        # insert in database
+        flash("Successfully entered availability!")
+    return render_template("m_player_avail.html", m_game_date=m_game_date)
 
 
 if __name__ == "__main__":
