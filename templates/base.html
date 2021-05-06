@@ -29,7 +29,8 @@
                         {% if session.user|lower == "manager"|lower %}
                         <li><a href="{{ url_for('gameorg') }}">Game Schedule</a></li>
                         {% endif %}
-                        <li><a href="{{ url_for('gameresult') }}">Game Details</a></li>
+                        <li><a href="{{ url_for('gameresult') }}">Women Fixture and Results</a></li>
+                        <li><a href="{{ url_for('men_gameresult') }}">Men Fixture and Results</a></li>
                         <li><a href="{{ url_for('get_men_team') }}">Men's Team</a></li>
                         <li><a href="{{ url_for('get_women_team') }}">Women's Team</a></li>
                         {% if session.user %}
@@ -49,8 +50,8 @@
             {% if session.user|lower == "manager"|lower %}
             <li><a href="{{ url_for('gameorg') }}">Game Schedule</a></li>
             {% endif %}
-            <li><a href="{{ url_for('gameresult') }}">Game Details</a></li>
-            <li><a href="{{ url_for('get_men_team') }}">Men's Team</a></li>
+            <li><a href="{{ url_for('gameresult') }}">Women Fixture and Results</a></li>
+            <li><a href="{{ url_for('men_gameresult') }}">Men Fixture and Results</a></li>
             <li><a href="{{ url_for('get_women_team') }}">Women's Team</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
