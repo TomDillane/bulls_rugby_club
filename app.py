@@ -118,7 +118,8 @@ def gameorg():
 
         gameorg = {
             "team": request.form.get("team-opt").lower(),
-            "date": request.form.get("game-date").lower(),
+            "match_date": datetime.strptime(request.form.get("game-date"), "%b %d, %Y"),
+            "date": request.form.get("game-date"),
             "opposition": request.form.get("opposition").lower(),
             "venue": request.form.get("venue").lower(),
             "bullsresult": 'TBC',
@@ -135,7 +136,7 @@ def gameorg():
 def gameresult():
     # return game schedule from database
     women = mongo.db.users.find({"gender": "female"})
-    games = mongo.db.game_schedule.find({"team": "women"}).sort("_id", -1)
+    games = mongo.db.game_schedule.find({"team": "women"}).sort("match_date", -1)
     return render_template("gameresult.html", games=games, women=women)
 
 
@@ -166,7 +167,7 @@ def avail():
     w_game_date = mongo.db.game_schedule.find({
         "team": "women",
         "bullsresult": "TBC"
-        }).sort('date', 1)
+        }).sort('match_date', -1)
 
     if request.method == "POST":
         # create object for player availability option
