@@ -118,7 +118,8 @@ def gameorg():
 
         gameorg = {
             "team": request.form.get("team-opt").lower(),
-            "match_date": datetime.strptime(request.form.get("game-date"), "%b %d, %Y"),
+            "match_date": datetime.strptime(
+                request.form.get("game-date"), "%b %d, %Y"),
             "date": request.form.get("game-date"),
             "opposition": request.form.get("opposition").lower(),
             "venue": request.form.get("venue").lower(),
@@ -136,7 +137,8 @@ def gameorg():
 def gameresult():
     # return game schedule from database
     women = mongo.db.users.find({"gender": "female"})
-    games = mongo.db.game_schedule.find({"team": "women"}).sort("match_date", -1)
+    games = mongo.db.game_schedule.find(
+        {"team": "women"}).sort("match_date", -1)
     return render_template("gameresult.html", games=games, women=women)
 
 
@@ -147,6 +149,8 @@ def update_score(game_id):
 
         score = {
             "team": request.form.get("team").lower(),
+            "match_date": datetime.strptime(
+                request.form.get("date"), "%b %d, %Y"),
             "date": request.form.get("date"),
             "opposition": request.form.get("opposition").lower(),
             "venue": request.form.get("venue").lower(),
