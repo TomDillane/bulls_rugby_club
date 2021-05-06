@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col s12 red  page-heading">
+        <h3 class="center-align">Game Availability</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12  team-avail">
+        <h5 class="center-align">Please populate form with your availability</h5>
+    </div>
+</div>
+
+<!-- Player Avail Form -->
+<div class="game-avail">
+    <form method="POST" action="{{ url_for('m_avail') }}">
+
+
+        <div class="row" id="date-select">
+           
+            <div class="input-field col s12 m4 offset-m1">
+                <select name="date-opt" id="date-opt" required>
+                    {% for mgame in m_game_date %}                    
+                    <option value="{{ mgame.date }}" {% if loop.first %} SELECTED{% endif %}>{{ mgame.date }}</option>
+                    {% endfor %}
+                </select>
+                <label>Game Date</label>
+            </div>
+        </div>
+        <div class="row" id="avail-select">
+            
+            <div class="input-field col s12 m4 offset-m1">
+                <select name="avail" id="avail-selector" onchange="check1()" required>
+                    <option value="" disabled selected>Can you play?</option>
+                    <option value="available">Available</option>
+                    <option value="unavailable">Unavailable</option>
+
+                </select>
+                <label></label>
+            </div>
+        </div>
+        <div class="row" id="meet-select">
+            
+            <div class="input-field col s12 m4 offset-m1">
+                <select name="meet" id="meet-selector">
+                    <option value="" disabled selected>Where will you meet the team?</option>
+                    <option value="clubhouse">Clubhouse</option>
+                    <option value="gamevenue">Game Venue</option>
+
+                </select>
+                <label></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">Submit</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
