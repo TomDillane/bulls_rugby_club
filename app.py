@@ -65,8 +65,9 @@ def signup():
             "firstname": request.form.get("firstname").lower(),
             "lastname": request.form.get("lastname").lower(),
             "type": request.form.get("membership").lower(),
-            "gender": request.form.get("gender"),
-            "position": request.form.get("position")
+            "gender": request.form.get("gender").lower(),
+            "position": request.form.get("position").lower(),
+            "profilepic": request.form.get("image-url").lower()
         }
         # insert in database
         mongo.db.users.insert_one(signup)
