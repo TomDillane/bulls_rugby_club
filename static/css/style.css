@@ -161,10 +161,14 @@ nav li:hover {
 
 /* teams */
 /* fixture */
-
+/* 
 .match-fixture {
     background: url("../img/game-schedule_v3.jpg") no-repeat;
     background-size: cover;
+}*/
+
+.select-wrapper input.select-dropdown {
+    color: #2b2929;
 }
 
 .input-field-game {
@@ -172,12 +176,12 @@ nav li:hover {
 }
 
 ::placeholder {
-    color: #d8cdcd;
+    color: #2b2929;
     font-family: 'Patua One', cursive;
 }
 
 .match-org {
-    color: #d8cdcd;
+    color: #2b2929;
     font-family: 'Patua One', cursive;
 }
 
@@ -215,13 +219,13 @@ nav li:hover {
     font-family: 'Kiwi Maru', serif;
     font-size: 20px;
 }
-
+/*
 .game-avail {
     background: url("../img/avail.jpg") no-repeat;
     background-size: cover;
     height: 90vh;
     width: auto;
-}
+}*/
 
 #meet-select {
     display: none;
@@ -238,6 +242,7 @@ nav li:hover {
 .teams {
     text-transform: capitalize;
     font-weight: 700;
+    margin-top: 100px;
 }
 
 /* update score */
