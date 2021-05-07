@@ -215,7 +215,7 @@ def m_avail():
 
         avail = {
             "player": session["user"],
-            "team": "women",
+            "team": "men",
             "date": request.form.get("date-opt"),
             "available": request.form.get("avail").lower(),
             "meet": request.form.get("meet", "NA").lower()
