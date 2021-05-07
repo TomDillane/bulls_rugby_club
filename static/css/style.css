@@ -98,13 +98,19 @@ nav li:hover {
     display: none;
 }
 
-.signup-form {
-    background-color: rgb(179, 16, 16, .2);
+.signup {
+    background-image: url("../img/signup.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    filter: blur(8px);
 }
 
-.signup {
-    background: url("../img/signup.jpg") no-repeat;
-    background-size: cover;
+.form-container {
+    
+    color: white;
+    
 }
 
 .signup-field {
