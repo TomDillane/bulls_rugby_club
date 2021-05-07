@@ -7,7 +7,7 @@
 </div>
 <div class="row">
     <div class="col s10 offset-s1 m4 offset-m4 indigo lighten-1 update-head">
-        <h4 class="center-align">{{game.date}}</h3>
+        <h4 class="center-align">{{game.date}}</h4>
     </div>
 </div>
 
@@ -33,19 +33,27 @@
                 <label for="venue"></label>
             </div>
         </div>
-        <div class="col s12 m3 center-align teams">
-            <p>{{game.team}}</p>
+        <div class="row center-align">
+            <div class="col s12 teams">
+                <p>{{game.team}}</p>
+            </div>
         </div>
-        <div class="input-field col s4 offset-s4 m1">
-            <input id="bullsresult" name="bullsresult" type="text" class="validate" required>
-            <label for="bullsresult"></label>
+        <div class="row">
+            <div class="input-field-score col s4 offset-s4 m2 offset-m5">
+                <input id="bullsresult" name="bullsresult" type="text" class="validate" required>
+                <label for="bullsresult"></label>
+            </div>
         </div>
-        <div class="col s12 m3 center-align teams">
-            <p>{{game.opposition}}</p>
-        </div>
-        <div class="input-field col s4 offset-s4 m1">
-            <input id="oppresult" name="oppresult" type="text" class="validate" required>
-            <label for="oppresult"></label>
+        <div class="row center-align">
+            <div class="col s12 teams">
+                <p>{{game.opposition}}</p>
+            </div>
+            <div class="row">
+                <div class="input-field-score col s4 offset-s4 m2 offset-m5">
+                    <input id="oppresult" name="oppresult" type="text" class="validate text-center" required>
+                    <label for="oppresult"></label>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
