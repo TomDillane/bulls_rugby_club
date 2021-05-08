@@ -47,22 +47,16 @@
         </tr>
 
         <tr>
-
-            <td></td>
-            <td></td>
-
+            {% if session.user|lower == "manager"|lower %}
             <td>
-
-                {% if session.user|lower == "manager"|lower %}
-
-                <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small red">Edit</a>
-                {% endif %}
-
+                <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small indigo">Edit</a>
             </td>
-
-
+            <td></td>
+            <td>
+                <a href="{{ url_for('delete_game', game_id=game._id) }}" class="btn-small red">Remove</a>
+                {% endif %}
+            </td>
         </tr>
-
         {% endfor %}
     </tbody>
 

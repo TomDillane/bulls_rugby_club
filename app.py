@@ -169,6 +169,13 @@ def update_score(game_id):
     return render_template("update_score.html", game=game)
 
 
+@app.route("/delete_game/<game_id>", methods=["GET", "POST"])
+def delete_game(game_id):
+    mongo.db.game_schedule.remove({"_id": ObjectId(game_id)})
+    flash("Game Successfully Deleted")
+    return redirect(url_for("gameorg"))
+
+
 @app.route("/avail", methods=["GET", "POST"])
 def avail():
     w_game_date = mongo.db.game_schedule.find({
