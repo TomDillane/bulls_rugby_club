@@ -12,14 +12,18 @@ function check() {
      {
         document.getElementById("position-select").style.display = 'block';
         document.getElementById("gender-select").style.display = 'block';
+        document.getElementById("image-url-wrap").style.display = 'block';
         document.getElementById("pos-selector").required = true;
-        document.getElementById("gender-select").required = true;
+        document.getElementById("gender-selector").required = true;
+        document.getElementById("image-url").required = true;
     }
     else {
         document.getElementById("position-select").style.display = 'none';
         document.getElementById("gender-select").style.display = 'none';
-        document.getElementById("pos-selector").required = false;
-        document.getElementById("gender-select").required = false;
+        document.getElementById("gender-select").style.display = 'none';
+        document.getElementById("image-url-wrap").required = false;
+        document.getElementById("gender-selector").required = false;
+        document.getElementById("image-url").required = false;
     }
 }
 function check1() {
