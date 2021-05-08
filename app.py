@@ -39,13 +39,6 @@ def get_women_team():
     return render_template("women.html", women=women)
 
 
-@app.route("/news")
-def news():
-    # return game schedule from database
-    games = mongo.db.game_schedule.find()
-    return render_template("news.html", games=games)
-
-
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
