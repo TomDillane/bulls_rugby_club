@@ -94,7 +94,7 @@ nav li:hover {
 /* home */
 /* sign up */
 
-#gender-select, #position-select {
+#gender-select, #position-select, #image-url-wrap {
     display: none;
 }
 
