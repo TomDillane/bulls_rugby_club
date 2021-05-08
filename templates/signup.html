@@ -6,18 +6,19 @@
         <h3 class="center-align">Sign Up and Take Your Seat at the Club!!</h3>
     </div>
 </div>
-<div class="signup">
-    <div class="form-container">
+
+
+    <div class="form-container center-align">
         <form class="signup-form" method="POST" action="{{ url_for('signup') }}">
             <div class="row">
-                <div class="input-field col s12 m4 offset-m1">
+                <div class="input-field-signup col s12 m4 offset-m1">
                     <input id="username" name="username" type="text" class="validate signup-field"
                         placeholder="Username" required>
                     <label for="username"></label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12 m4 offset-m1">
+                <div class="input-field-signup col s12 m4 offset-m1">
                     <input id="password" name="password" type="password" class="validate signup-field"
                         placeholder="Password" required>
                     <label for="password"></label>
@@ -26,14 +27,14 @@
 
             <div class="row">
 
-                <div class="input-field col s12 m4 offset-m1">
+                <div class="input-field-signup col s12 m4 offset-m1">
                     <input id="firstname" name="firstname" type="text" class="validate signup-field"
                         placeholder="First Name" required>
                     <label for="firstname"></label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12 m4 offset-m1">
+                <div class="input-field-signup col s12 m4 offset-m1">
                     <input id="lastname" name="lastname" type="text" class="validate signup-field"
                         placeholder="Last Name" required>
                     <label for="lastname"></label>
@@ -41,7 +42,7 @@
             </div>
             <div class="row" id="membership-select">
 
-                <div class="input-field col s12 m4 offset-m1">
+                <div class="input-field-signup col s12 m4 offset-m1">
                     <select name="membership" id="member-selector" onchange="check()" required>
                         <option value="" disabled selected class="signup-drop">Membership Type</option>
                         <option value="volunteer">Volunteer</option>
@@ -54,7 +55,7 @@
             </div>
             <div class="row" id="gender-select">
 
-                <div class="input-field col s12 m4 offset-m1">
+                <div class="input-field-signup col s12 m4 offset-m1">
                     <select name="gender" id="gender-selector">
                         <option value="" disabled selected>Gender</option>
                         <option value="male">Male</option>
@@ -66,7 +67,7 @@
             </div>
             <div class="row" id="position-select">
 
-                <div class="input-field col s12 m4 offset-m1">
+                <div class="input-field-signup col s12 m4 offset-m1">
                     <select name="position" id="pos-selector">
                         <option value="" disabled selected>Position</option>
                         <option value="front row">Front Row</option>
@@ -80,7 +81,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12 m4 offset-m1">
+                <div class="input-field-signup col s12 m4 offset-m1">
                     <input id="image-url" name="image-url" type="url" class="validate signup-field"
                         placeholder="image url" required>
                     <label for="image-url"></label>
@@ -93,59 +94,13 @@
             </div>
         </form>
     </div>
-</div>
+
+
+
+
+
+
+
 
 
 {% endblock %}
-<!--<div class="row">
-        <div class="col s3">
-            <p>Membership Type</p>
-        </div>
-        <div class="col s3">
-            <p>
-                <label for="volunteer">
-                    <input class="with-gap" name="group1" value="volunteer" type="radio" id="volunteer" onclick="noshowpos();" required>
-                    <span>Volunteer</span>
-                </label>
-            </p>
-        </div>
-        <div class="col s3">
-            <p>
-                <label for="player">
-                    <input class="with-gap" name="group1" value="player" type="radio" id="player" onclick="showpos();" >
-                    <span>Player</span>
-                </label>
-            </p>
-        </div>
-        <div class="col s3">
-            <p>
-                <label for="social-member">
-                    <input class="with-gap" name="group1" value="social-member" type="radio" id="social-member" onclick="noshowpos();" >
-                    <span>Social</span>
-                </label>
-            </p>
-        </div>
-    </div>
-    <div class="row" id="gender-select">
-        <div class="col s3">
-            <p>Gender</p>
-        </div>
-        <div class="col s3">
-            <p>
-                <label for="male">
-                    <input class="with-gap" name="group2" value="male" type="radio" id="male"  >
-                    <span>Male</span>
-                </label>
-            </p>
-        </div>
-        <div class="col s3">
-            <p>
-                <label for="female">
-                    <input class="with-gap" name="group2" value="female" type="radio" id="female" >
-                    <span>Female</span>
-                </label>
-            </p>
-        </div>
-    </div>
-
-    -->

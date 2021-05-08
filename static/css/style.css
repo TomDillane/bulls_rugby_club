@@ -98,24 +98,18 @@ nav li:hover {
     display: none;
 }
 
-.signup {
-    background-image: url("../img/signup.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    filter: blur(8px);
-}
-
 .form-container {
-    
-    color: white;
-    
+    background-color: rgba(29, 27, 27, 0.6);
+    border-radius: 2%;
 }
 
 .signup-field {
     color: #d8cdcd;
     font-family: 'Patua One', cursive;
+}
+
+.input-field-signup {
+    margin-top: 60px;
 }
 
 .select-wrapper input.select-dropdown {
@@ -127,10 +121,8 @@ nav li:hover {
 /* log in */
 
 .login {
-    background: url("../img/login_v2.jpg") no-repeat;
-    background-size: cover;
-    height: 90vh;
-    width: auto;
+    background-color: rgba(29, 27, 27, 0.6);
+    border-radius: 2%;
 }
 
 .input-field {
@@ -173,16 +165,14 @@ nav li:hover {
     background-size: cover;
 }*/
 
-.select-wrapper input.select-dropdown {
-    color: #2b2929;
-}
+
 
 .input-field-game {
     margin-top: 120px
 }
 
 ::placeholder {
-    color: #2b2929;
+    color: #d8cdcd;
     font-family: 'Patua One', cursive;
 }
 
@@ -258,12 +248,14 @@ nav li:hover {
     .club-name {
         left: 120px !important;
     }
+    
 }
 
 @media only screen and (max-width: 600px) {
     .social-media {
         text-align: center;
     }
+
 }
   
 /* Media Queries */
