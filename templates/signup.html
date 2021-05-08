@@ -42,7 +42,7 @@
             </div>
             <div class="row" id="membership-select">
 
-                <div class="input-field-signup col s12 m4 offset-m1">
+                <div class="input-field-signup col s12 m4 offset-m1 member-selector">
                     <select name="membership" id="member-selector" onchange="check()" required>
                         <option value="" disabled selected class="signup-drop">Membership Type</option>
                         <option value="volunteer">Volunteer</option>
@@ -80,10 +80,10 @@
                     <label></label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="image-url-wrap">
                 <div class="input-field-signup col s12 m4 offset-m1">
                     <input id="image-url" name="image-url" type="url" class="validate signup-field"
-                        placeholder="image url" required>
+                        placeholder="image url">
                     <label for="image-url"></label>
                 </div>
             </div>
