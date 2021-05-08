@@ -230,6 +230,20 @@ def m_avail():
     return render_template("m_player_avail.html", m_game_date=m_game_date)
 
 
+@app.route("/match_team")
+def match_team():
+    # filter for players that set to available and join
+    avail_team = mongo.db.player_avail.aggregate([{"$lookup": {
+            "from": "users",       # other table name
+            "localField": "player",        # key field in collection 2
+            "foreignField": "username",      # key field in collection 1
+            "as": "match_players"   # alias for resulting table
+        }},
+        {"$project" : {"match_players": 1}}
+        ])
+    return render_template("match_team.html", avail_team=avail_team)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

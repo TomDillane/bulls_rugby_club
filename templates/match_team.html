@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col s12 red  page-heading">
+        <h3 class="center-align">Match Team</h3>
+    </div>
+</div>
+
+<!-- team members available -->
+{% for player in avail_team %}
+<div>
+    
+    {{ player }}
+    
+</div>
+
+{% endfor %}
+
+{% endblock %}
