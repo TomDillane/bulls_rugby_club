@@ -19,8 +19,8 @@ function check() {
     else {
         document.getElementById("position-select").style.display = 'none';
         document.getElementById("gender-select").style.display = 'none';
-        document.getElementById("gender-select").style.display = 'none';
-        document.getElementById("image-url-wrap").required = false;
+        document.getElementById("image-url-wrap").style.display = 'none';
+        document.getElementById("pos-selector").required = false;
         document.getElementById("gender-selector").required = false;
         document.getElementById("image-url").required = false;
     }
