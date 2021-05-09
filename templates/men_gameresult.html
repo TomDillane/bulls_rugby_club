@@ -49,7 +49,7 @@
         <tr>
             {% if session.user|lower == "manager"|lower %}
             <td>
-                <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small indigo">Edit Score</a>
+                <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small indigo">Edit</a>
             </td>
             <td></td>
             <td>
