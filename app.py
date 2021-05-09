@@ -67,6 +67,7 @@ def signup():
 
         session["current_user"] = request.form.get("username").lower()
         flash("You are signed up!")
+        return redirect(url_for("login"))
     return render_template("signup.html")
 
 
