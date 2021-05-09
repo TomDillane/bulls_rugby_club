@@ -40,15 +40,10 @@ function teams() {
     let team = document.getElementById("team-select").value;
     if (team == "men") {
         document.getElementById("guys-a").style.display = 'block';
-        document.getElementById("guys-un").style.display = 'block';
         document.getElementById("girls-a").style.display = 'none';
-        document.getElementById("girls-un").style.display = 'none';
     }
     else if (team == "women") {
         document.getElementById("guys-a").style.display = 'none';
-        document.getElementById("guys-un").style.display = 'none';
         document.getElementById("girls-a").style.display = 'block';
-        document.getElementById("girls-un").style.display = 'block';
     }
-
 }
