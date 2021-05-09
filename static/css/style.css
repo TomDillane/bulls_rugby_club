@@ -242,6 +242,13 @@ nav li:hover {
 }
 
 /* update score */
+/* match team */
+
+#players-available-women {
+    display: none;
+}
+
+/* match team */
 /* Media Queries */
 
 @media only screen and (max-width: 992px) {
