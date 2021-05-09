@@ -11,12 +11,26 @@
 <div class="login">
     <form class="form-content" method="POST" action="{{ url_for('login') }}">
         <div class="row">
-            <div class="input-field col s12 m4 offset-m1">
-                <input id="username" name="username" type="text" class="validate login-field" placeholder="Username" required>
-                <label for="username"></label>
+            <div class="input-field col s12 m5 offset-m1 login-area">
+                <div>
+                    <input id="username" name="username" type="text" class="validate login-field" placeholder="Username"
+                        required>
+                    <label for="username"></label>
+                </div>
+                <div class="login-password">
+                    <input id="password" name="password" type="password" class="validate login-field"
+                        placeholder="Password" required>
+                    <label for="password"></label>
+                </div>
+                <div class="center-align login-submit">
+                    <button class="btn waves-effect waves-light red" type="submit" name="action">Log In</button>
+                </div>
+            </div>
+            <div class="col s12 m5 offset-m1">
+                <img src="../static/img/login_v2.jpg" alt="stadium picture" class="login-pic center-align">
             </div>
         </div>
-        <div class="row">
+        <!--        <div class="row">
             <div class="input-field col s12 m4 offset-m1">
                 <input id="password" name="password" type="password" class="validate login-field" placeholder="Password" required>
                 <label for="password"></label>
@@ -27,6 +41,8 @@
                 <button class="btn waves-effect waves-light red" type="submit" name="action">Log In</button>
             </div>
         </div>
+        -->
+
     </form>
 </div>
 
