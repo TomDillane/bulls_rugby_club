@@ -107,14 +107,22 @@ nav li:hover {
     color: #d8cdcd;
     font-family: 'Patua One', cursive;
 }
-
+/*
 .input-field-signup {
     margin-top: 60px;
-}
+}*/
 
 .select-wrapper input.select-dropdown {
     color: #d8cdcd;
     font-family: 'Patua One', cursive;
+}
+
+.signup-pic {
+    display: block;
+    width: 40vw;
+    height: auto;
+    border-radius: 2%;
+    margin: auto;
 }
 
 /* sign up */

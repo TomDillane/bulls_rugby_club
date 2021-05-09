@@ -8,7 +8,82 @@
 </div>
 
 
-    <div class="form-container center-align">
+<div class="form-container center-align">
+    <form class="signup-form" method="POST" action="{{ url_for('signup') }}">
+        <div class="row">
+            <div class="input-field-signup col s12 m4 offset-m1">
+                <input id="username" name="username" type="text" class="validate signup-field" placeholder="Username"
+                    required>
+                <label for="username"></label>
+
+                <input id="password" name="password" type="password" class="validate signup-field"
+                    placeholder="Password" required>
+                <label for="password"></label>
+
+                <input id="firstname" name="firstname" type="text" class="validate signup-field"
+                    placeholder="First Name" required>
+                <label for="firstname"></label>
+
+                <input id="lastname" name="lastname" type="text" class="validate signup-field" placeholder="Last Name"
+                    required>
+                <label for="lastname"></label>
+
+                <select name="membership" id="member-selector" onchange="check()" required>
+                    <option value="" disabled selected class="signup-drop">Membership Type</option>
+                    <option value="volunteer">Volunteer</option>
+                    <option value="player">Player</option>
+                    <option value="social">Social</option>
+
+                </select>
+                <label></label>
+
+
+
+                <div class="input-field-signup" id="gender-select">
+                    <select name="gender" id="gender-selector">
+                        <option value="" disabled selected>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+
+                    </select>
+                    <label></label>
+                </div>
+
+
+                <div class="input-field-signup" id="position-select">
+                    <select name="position" id="pos-selector">
+                        <option value="" disabled selected>Position</option>
+                        <option value="front row">Front Row</option>
+                        <option value="second row">Second Row</option>
+                        <option value="back row">Back Row</option>
+                        <option value="half back">Half Back</option>
+                        <option value="center">Center</option>
+                        <option value="full back">Full Back</option>
+                    </select>
+                    <label></label>
+                </div>
+
+                <div class="input-field-signup" id="image-url-wrap">
+                    <input id="image-url" name="image-url" type="url" class="validate signup-field"
+                        placeholder="image url">
+                    <label for="image-url"></label>
+                </div>
+
+                <div class="col s12 center-align">
+                    <button class="btn waves-effect waves-light red" type="submit" name="action">Sign Up</button>
+                </div>
+            </div>
+            <div class="col s12 m5 offset-m1">
+                <img src="../static/img/signup_icon.png" alt="bull picture" class="signup-pic center-align">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
+<!--
+<div class="form-container center-align">
         <form class="signup-form" method="POST" action="{{ url_for('signup') }}">
             <div class="row">
                 <div class="input-field-signup col s12 m4 offset-m1">
@@ -94,13 +169,4 @@
             </div>
         </form>
     </div>
-
-
-
-
-
-
-
-
-
-{% endblock %}
+    -->
