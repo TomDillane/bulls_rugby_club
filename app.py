@@ -239,9 +239,18 @@ def match_team():
             "foreignField": "username",      # key field in collection 1
             "as": "match_players"   # alias for resulting table
         }},
-        {"$project" : {"match_players": 1}}
+        {"$unwind": "$match_players"},
+        {"$project" : {
+         "firstname" : "$match_players.firstname",
+         "lastname" : "$match_players.lastname",
+         "match_players.lastname": 1,  
+         "date": 1, 
+         "team": 1,
+         "available": 1,
+         "meet": 1,
+         "_id": 0}}
         ])
-    return render_template("match_team.html", avail_team=avail_team)
+    return render_template("match_team.html", title="Players", players=avail_team)
 
 
 if __name__ == "__main__":

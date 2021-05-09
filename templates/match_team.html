@@ -8,11 +8,19 @@
 </div>
 
 <!-- team members available -->
-{% for player in avail_team %}
+{% for player in players %}
 <div>
+
     
-    {{ player }}
-    
+   {{ player['date'] }}
+   {{ player['team'] }} 
+    {{ player['available'] }} 
+     {{ player['meet'] }} 
+    {{ player['firstname'] }}    
+    {{ player['lastname'] }} 
+
+   
+   
 </div>
 
 {% endfor %}
