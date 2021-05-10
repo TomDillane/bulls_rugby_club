@@ -105,8 +105,8 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/gameorg", methods=["GET", "POST"])
-def gameorg():
+@app.route("/schedule_game", methods=["GET", "POST"])
+def schedule_game():
     if request.method == "POST":
         # create object for game schedule
 
@@ -127,8 +127,8 @@ def gameorg():
     return render_template("gameorg.html")
 
 
-@app.route("/gameresult")
-def gameresult():
+@app.route("/women_gameresult")
+def women_gameresult():
     # return game schedule from database
     women = mongo.db.users.find({"gender": "female"})
     games = mongo.db.game_schedule.find(
@@ -176,8 +176,8 @@ def delete_game(game_id):
     return redirect(url_for("gameorg"))
 
 
-@app.route("/avail", methods=["GET", "POST"])
-def avail():
+@app.route("/female_avail", methods=["GET", "POST"])
+def female_avail():
     w_game_date = mongo.db.game_schedule.find({
         "team": "women",
         "bullsresult": "TBC"
@@ -203,8 +203,8 @@ def avail():
     return render_template("player_avail.html", w_game_date=w_game_date)
 
 
-@app.route("/m_avail", methods=["GET", "POST"])
-def m_avail():
+@app.route("/male_avail", methods=["GET", "POST"])
+def male_avail():
     m_game_date = mongo.db.game_schedule.find({
         "team": "men",
         "bullsresult": "TBC"
