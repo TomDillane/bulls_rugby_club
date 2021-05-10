@@ -46,11 +46,6 @@ def signup():
         user_exists = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
-        if user_exists:
-            # bring user back to signup page
-            flash("Username already exists")
-            return redirect(url_for("signup"))
-
         # create object with user sign up details
         signup = {
             "username": request.form.get("username").lower(),
@@ -58,10 +53,17 @@ def signup():
             "firstname": request.form.get("firstname").lower(),
             "lastname": request.form.get("lastname").lower(),
             "type": request.form.get("membership").lower(),
-            "gender": request.form.get("gender").lower(),
-            "position": request.form.get("position").lower(),
-            "profilepic": request.form.get("image-url").lower()
+            "gender": request.form.get("gender"),
+            "position": request.form.get("position"),
+            "profilepic": request.form.get("image-url")
         }
+
+        if user_exists:
+            # bring user back to signup page
+            flash("Username already exists")
+            return redirect(url_for("signup.html"))
+
+
         # insert in database
         mongo.db.users.insert_one(signup)
 
