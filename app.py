@@ -162,7 +162,7 @@ def update_score(game_id):
         }
         # update dictionary in database
         mongo.db.game_schedule.update({"_id": ObjectId(game_id)}, score)
-        return redirect(url_for("gameresult"))
+        return redirect(url_for("home_page"))
         flash("Result Updated!")
 
     game = mongo.db.game_schedule.find_one({"_id": ObjectId(game_id)})
@@ -173,7 +173,7 @@ def update_score(game_id):
 def delete_game(game_id):
     mongo.db.game_schedule.remove({"_id": ObjectId(game_id)})
     flash("Game Successfully Deleted")
-    return redirect(url_for("gameorg"))
+    return redirect(url_for("schedule_game"))
 
 
 @app.route("/female_avail", methods=["GET", "POST"])
