@@ -7,7 +7,7 @@
     </div>
 </div>
 
-
+<!--Sign up form -->
 <div class="form-container center-align">
     <form class="signup-form" method="POST" action="{{ url_for('signup') }}">
         <div class="row">
@@ -16,8 +16,8 @@
                     required>
                 <label for="username"></label>
 
-                <input id="password" name="password" type="password" class="validate signup-field"
-                    placeholder="Password" required>
+                <input id="password" name="password" pattern="^[a-zA-Z0-9]{5,15}$" type="password" minlength="5"
+                    maxlength="15" class="validate signup-field" placeholder="Password" required>
                 <label for="password"></label>
 
                 <input id="firstname" name="firstname" type="text" class="validate signup-field"
@@ -37,19 +37,15 @@
                 </select>
                 <label></label>
 
-
-
+                <!-- if player selected as member type, following apply -->
                 <div class="player-only player-fields-hide" id="gender-select">
                     <select name="gender" id="gender-selector">
                         <option value="" disabled selected>Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
-
                     </select>
                     <label></label>
                 </div>
-
-
                 <div class="player-only player-fields-hide" id="position-select">
                     <select name="position" id="pos-selector">
                         <option value="" disabled selected>Position</option>
@@ -62,13 +58,11 @@
                     </select>
                     <label></label>
                 </div>
-
                 <div class="player-only player-fields-hide" id="image-url-wrap">
                     <input id="image-url" name="image-url" type="url" class="validate signup-field"
                         placeholder="image url">
                     <label for="image-url"></label>
                 </div>
-
                 <div class="col s12 center-align">
                     <button class="btn waves-effect waves-light red" type="submit" name="action">Sign Up</button>
                 </div>
