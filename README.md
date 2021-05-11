@@ -1,29 +1,31 @@
 # Bulls Rugby Club
 ## Introduction
 The purpose of this website is to provide an online presence for a Rugby club.
-The site will contain information about the club in general, latest news and 
+The site will contain information about the club in general, latest fixtures and 
 results and team details. Users will have the option to join the club and 
-join a team as a player. 
+join a team as a player. As a player, the user will be able to elect availability for each match.
+As the manager, the user will be able to input games in the schedule, update results and delete games.
 
 ## User Stories
 
 ### First Time Users
 
 + I want to get an overview of the club
-+ I want to see latest news related to the club and teams
++ I want to see latest fixtures and results related to the club teams
 + I want the option to join the club
 + I want the option to join a team in the club
 
 ### Returning Users
 
 + I want to be able to log in
-+ I want to be able to edit my own profile
-+ I want to see latest news related to the club and teams
++ I want to be able to edit my game availability
++ I want to see latest fixtures and results related to the club teams
 
-### Admiin Users
+### Manager Users
 
-+ I want to be able to update latest news
-+ I want to be able to edit other profiles
++ I want to be able to update latest results
++ I want to be able to view all player availability for games
++ I want to be able to remove games from the schedule
 + I want to grow the club membership
 + I want to keep up to date on team memebership
 
@@ -31,23 +33,25 @@ join a team as a player.
 
 ### Strategy Plane
 
-The site is the online representation of a rugby club. Admins must be able to 
+The site is the online representation of a rugby club. The club manager must be able to 
 run the site overall, as is the case with the actual club. New members  must be 
 able to join and optionally select a team as a player. Returning players must 
-be able to log in and edit their profile. 
+be able to log in and edit their game availability. 
 
 ### Scope Plane
 
-The scope of the site is to allow the admin to run the site in terms of content and
+The scope of the site is to allow the manager to run the site in terms of content and
  the users to become members, edit their own information only and keep up to date
  in club affairs. 
  The site will include:
  + Home page with club overview
- + Latest news on club and team including results
- + Team details
+ + Team fixtures and results - both men and women
+ + Team details - both men and women
  + Log in option for members
  + Join option for new users
  + Option to join a team as a player
+ + Option for players to select game availability
+ + Option for the manager to schedule games, update results and delete games
 
 
 ### Structure Plane
@@ -65,16 +69,21 @@ the menu options as relevant to the user:
 
 [Home Wireframe](readme_images/home.png)
 
-[News Wireframe](readme_images/news.png)
+[Fixtures and Results Wireframe](readme_images/fixtures_results.png)
 
-[Team Wireframe](readme_images/team.png)
+[Team Wireframe](readme_images/team-details.png)
 
-[Sign Up Form Wireframe](readme_images/member_sign_form.png)
+[Sign Up Wireframe](readme_images/signup.png)
 
-[Join Team Form Wireframe](readme_images/team_join_form.png)
+[Login Wireframe](readme_images/login.png)
 
-[Log In Form Wireframe](readme_images/log_in.png)
+[Game Scheduler Wireframe](readme_images/game_fixture.png)
 
+[Match Team Wireframe](readme_images/match_team.png)
+
+[Update Score Team Wireframe](readme_images/update_score.png)
+
+[Game Available selection Team Wireframe](readme_images/player_availability.png)
 
 
 #### Backend
