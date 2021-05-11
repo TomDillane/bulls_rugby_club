@@ -20,6 +20,7 @@
 {% endif %}
 {% endfor %}
 
+<!-- table of results and  fixtures -->
 <table>
 
     {% for game in games %}
@@ -45,13 +46,12 @@
             <td>{{ game.opposition }}</td>
             <td>{{ game.oppresult }}</td>
         </tr>
-
         <tr>
             {% if session.user|lower == "manager"|lower %}
             <td>
                 <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small indigo">Edit</a>
             </td>
-            <td></td>
+            <td> </td>
             <td>
                 <a href="{{ url_for('delete_game', game_id=game._id) }}" class="btn-small red">Remove</a>
                 {% endif %}
