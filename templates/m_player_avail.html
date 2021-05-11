@@ -21,7 +21,8 @@
         <div class="row" id="date-select">
            
             <div class="input-field col s12 m4 offset-m1">
-                <select name="date-opt" id="date-opt" size="1" required>
+                <select name="date-opt" id="date-opt" required>
+                    <option value="">Choose</option> 
                     {% for mgame in m_game_date %}                    
                     <option value="{{ mgame.date }}" {% if loop.first %} SELECTED{% endif %}>{{ mgame.date }}</option>
                     {% endfor %}
