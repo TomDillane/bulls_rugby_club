@@ -63,8 +63,7 @@ def signup():
             flash("Username already exists")
             return redirect(url_for("signup.html"))
 
-
-        # insert in database
+        # insert in the database
         mongo.db.users.insert_one(signup)
 
         session["current_user"] = request.form.get("username").lower()
@@ -240,18 +239,19 @@ def match_team():
             "as": "match_players"   # alias for resulting table
         }},
         {"$unwind": "$match_players"},
-        {"$project" : {
-         "firstname" : "$match_players.firstname",
-         "lastname" : "$match_players.lastname",
-         "match_players.lastname": 1,  
-         "date": 1, 
+        {"$project": {
+         "firstname": "$match_players.firstname",
+         "lastname": "$match_players.lastname",
+         "match_players.lastname": 1,
+         "date": 1,
          "team": 1,
          "available": 1,
          "meet": 1,
          "_id": 0}}
         ])
     print(avail_team)
-    return render_template("match_team.html", title="Players", players=avail_team)
+    return render_template(
+        "match_team.html", title="Players", players=avail_team)
 
 
 if __name__ == "__main__":
