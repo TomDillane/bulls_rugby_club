@@ -12,55 +12,57 @@
 </div>
 
 <!-- update score form -->
-<form method="POST" action="{{ url_for('update_score', game_id=game._id) }}">
-    <div class="row">
-        <div hidden>
-            <div class="input-field col s12 m4">
-                <input id="team" name="team" type="text" value="{{game.team}}" class="validate" required>
-                <label for="team"></label>
-            </div>
-            <div class="input-field col s12 m4">
-                <input id="date" name="date" type="text" value="{{game.date}}" class="validate" required>
-                <label for="date"></label>
-            </div>
-            <div class="input-field col s12 m4">
-                <input id="opposition" name="opposition" type="text" value="{{game.opposition}}" class="validate"
-                    required>
-                <label for="opposition"></label>
-            </div>
-            <div class="input-field col s12 m4">
-                <input id="venue" name="venue" type="text" value="{{game.venue}}" class="validate" required>
-                <label for="venue"></label>
-            </div>
-        </div>
-        <div class="row center-align">
-            <div class="col s12 teams">
-                <p>{{game.team}}</p>
-            </div>
-        </div>
+<div class="update_score_container">
+    <form method="POST" action="{{ url_for('update_score', game_id=game._id) }}">
         <div class="row">
-            <div class="input-field-score col s4 offset-s4 m2 offset-m5">
-                <input id="bullsresult" name="bullsresult" type="text" class="validate" required>
-                <label for="bullsresult"></label>
+            <div hidden>
+                <div class="input-field col s12 m4">
+                    <input id="team" name="team" type="text" value="{{game.team}}" class="validate" required>
+                    <label for="team"></label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <input id="date" name="date" type="text" value="{{game.date}}" class="validate" required>
+                    <label for="date"></label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <input id="opposition" name="opposition" type="text" value="{{game.opposition}}" class="validate score-update"
+                        required>
+                    <label for="opposition"></label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <input id="venue" name="venue" type="text" value="{{game.venue}}" class="validate score-update" required>
+                    <label for="venue"></label>
+                </div>
             </div>
-        </div>
-        <div class="row center-align">
-            <div class="col s12 teams">
-                <p>{{game.opposition}}</p>
+            <div class="row center-align">
+                <div class="col s12 teams">
+                    <p>{{game.team}}</p>
+                </div>
             </div>
             <div class="row">
                 <div class="input-field-score col s4 offset-s4 m2 offset-m5">
-                    <input id="oppresult" name="oppresult" type="text" class="validate text-center" required>
-                    <label for="oppresult"></label>
+                    <input id="bullsresult" name="bullsresult" type="text" class="validate score-update" required>
+                    <label for="bullsresult"></label>
+                </div>
+            </div>
+            <div class="row center-align">
+                <div class="col s12 teams">
+                    <p>{{game.opposition}}</p>
+                </div>
+                <div class="row">
+                    <div class="input-field-score col s4 offset-s4 m2 offset-m5">
+                        <input id="oppresult" name="oppresult" type="text" class="validate text-center score-update" required>
+                        <label for="oppresult"></label>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col s12 center-align">
-            <button class="btn waves-effect waves-light red" type="submit" name="action">Update Score</button>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">Update Score</button>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
 
 {% endblock %}

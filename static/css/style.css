@@ -183,13 +183,6 @@ nav li:hover {
 
 /* teams */
 /* fixture */
-/* 
-.match-fixture {
-    background: url("../img/game-schedule_v3.jpg") no-repeat;
-    background-size: cover;
-}*/
-
-
 
 .input-field-game {
     margin-top: 120px
@@ -203,6 +196,11 @@ nav li:hover {
 .match-org {
     color: #2b2929;
     font-family: 'Patua One', cursive;
+}
+
+.match-fixture {
+    background-color: rgba(29, 27, 27, 0.6);
+    border-radius: 2%;
 }
 
 /* fixture */
@@ -234,18 +232,16 @@ nav li:hover {
 /* results */
 /* availability */
 
+.game-avail {
+    background-color: rgba(29, 27, 27, 0.6);
+    border-radius: 2%;
+}
+
 .team-avail {
     text-transform: capitalize;
     font-family: 'Kiwi Maru', serif;
     font-size: 20px;
 }
-/*
-.game-avail {
-    background: url("../img/avail.jpg") no-repeat;
-    background-size: cover;
-    height: 90vh;
-    width: auto;
-}*/
 
 #meet-select {
     display: none;
@@ -265,24 +261,22 @@ nav li:hover {
     margin-top: 100px;
 }
 
+.update_score_container {
+    background-color: rgba(29, 27, 27, 0.6);
+    border-radius: 2%;
+    font-family: 'Kiwi Maru', cursive;
+    color: #d8cdcd;
+    font-size: large;
+}
+
+.score-update {
+    font-family: 'Patua One', cursive;
+    color: #d8cdcd;
+}
+
 /* update score */
 /* match team */
-/*
-#girls-a {
-    display: none;
-}
 
-#girls-un {
-    display: none;
-}
-
-#guys-a {
-    display: none;
-}
-
-#guys-un {
-    display: none;
-}*/
 
 /* match team */
 /* Media Queries */
