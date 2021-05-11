@@ -89,51 +89,93 @@ the menu options as relevant to the user:
 #### Backend
 
 The database used is MongoDB. It is a non relational file based.
-There are four collections:
+There are three collections:
 
-1. Membership
-2. Team
-3. News
-4. NewsLetter
-
-
-[Database Wireframe](readme_images/database_v1.png)
+1. Users
+2. Game Schedule
+3. Player Availability
 
 
-##### Membership
+[Database Wireframe](readme_images/database_design.png)
 
-This allows a new user to become a member of the club. The name, email and password
+
+##### Users
+
+This allows a new user to become a member of the club. The name and password
 are captured for log in.
 Where membership type of "Player", is selected, the user will be 
-directed to the player form where playing position and date of birth must be selected.
+directed to the player form where playing position and gender must be selected.
 Gender will direct to the relevant team.
 The options of "Volunteer", and "Social", are for the club management to use for event organisation.
 
-##### Team
+##### Game Schedule
 
-This will only apply where "Player", is selected at the "Sign Up", stage.
-The user will populate their playing position, DOB and whether they are available to play currently or not.
-This will be available for editing by the user so that the team manager has a current state for each player.
+This will be populated via front end form only available to user "manager"
+ where game fixtures can be set,
+results edited, and games deleted if necessary.
+This collection will be used to populate the relevant pages fixtures and results.
 
 
-##### News
+##### Player Availability
 
-This will only be available for editing by the site admin. It will contain 
-latest club updates such as team results, upcoming fixtures and social events.
-
-##### NewsLetter
-
-This will allow users to the site to sign up for a regular newsletter. It will not require sign up to the club.
-
+This will be populated via front end form only available to users that are type "player". 
+It will be joined using an aggregate function to take players full names for display on 
+match team page only available to user "manager".
 
 
 ### Skeleton Plane 
 
-The site will have 7 pages. There will be no reliance on the back button. 
-The user will at any point be able to log out or sign up / sign in.
+The site will have 5 standard pagers for all users.
+Players will have a form to opt in or out for game availability.
+Manager will have two pages extra to all others to set game schedules and view players available.
+Manager will have a form to edit game results. 
 
 ### Surface Plane
 
 The site's colors, typography and layout will be consistent and in line with the club's colors.
+The main club colors are red and blue, and this is reflected on the site. 
+
+## Features
+
+#### Current Features
+
++ The site will allow new users to join.
++ The site will allow returning users to log in.
++ The site will allow users to elect as a player and join a team.
++ The site will allow players to elect availability for matches on the schedule.
++ The site will allow players to change decision on availability with update captured in database without duplication.
++ The site will allow only the "manager", to set games in the schedule.
++ The site will allow only the "manager", to edit the game results.
++ The site will allow only the "manager", to delete games from the schedule.
++ Users can view team members for details of playing position and profile picture.
++ Users can view team game history with results and any upcoming fixtures.
++ Manager can view players available. 
+
+#### Future Features
+
++ Ability for manager to dynamically organise team based on availability selection.
++ Email integration to auto send mails to players when new fixture entered by "manager".
++ Email integration to auto send mails to team members selected.
++ League table to integrate with results data. 
+
+## Technologies used
+
+#### Frameworks, Tools and Libraries
+
++ Materialize
++ Font Awesome
++ Google Fonts
++ Balsamiq
++ Github
++ MongoDB
++ Cloudinary for image storage
+
+#### Languages
+
++ HTML
++ consistent
++ JavaScript
++ Python
++ Jinja
 
 
