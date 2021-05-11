@@ -277,6 +277,9 @@ nav li:hover {
 /* update score */
 /* match team */
 
+.match-team-head {
+    font-family: 'Patua One', cursive;
+}
 
 /* match team */
 /* Media Queries */

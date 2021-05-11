@@ -9,53 +9,40 @@
 
 <!-- team members available -->
 
-    <h5 class="center-align match-team-head">Player Availability</h5>
-    <div class="row center-align">
-        <div class="input-field-signup col s12 m4 offset-m4">
-            <select name="match-team" id="team-select" onchange="teams()">
-                <option value="" disabled selected>Team</option>
-                <option value="men">Men</option>
-                <option value="women">Women</option>
+<h5 class="center-align match-team-head">Player Availability</h5>
 
-            </select>
-            <label></label>
+{% for player in players %}
+{% if player['team'] == "women" %}
+<div class="match-team-content">
+    <div class="row players-available-women">
+        <div class="col s12 m4 offset-m4">
+            <p>
+                {{ player['firstname'].capitalize() }} {{ player['lastname'].capitalize() }} is
+                {{ player['available'] }} for the {{ player['team'] }}'s team
+                that have a game on {{ player['date'] }} and will meet up with the team at the {{ player['meet'] }}.
+            </p>
         </div>
     </div>
-    
-    {% for player in players %}
-    {% if player['team'] == "women" %}
-    <div>
-        
 
-        <div class="row players-available-women" id="girls-a">
-            <div class="col s12 m4 offset-m4">
-                <p>
-                    {{ player['firstname'].capitalize() }} {{ player['lastname'].capitalize() }} is
-                    {{ player['available'] }} for the {{ player['team'] }}'s team
-                    that have a game on {{ player['date'] }} and will meet up with the team at the {{ player['meet'] }}.
-                </p>
-            </div>
-        </div>
-        
-    
+
     {% endif %}
-    
-        {% if player['team'] == "men" %}
-   
-        <div class="row players-available-men" id="guys-a">
-            <div class="col s12 m4 offset-m4">
-                <p>
-                    {{ player['firstname'].capitalize() }} {{ player['lastname'].capitalize() }} is
-                    {{ player['available'] }} for the {{ player['team'] }}'s team
-                    that have a game on {{ player['date'] }} and will meet up with the team at the {{ player['meet'] }}.
-                </p>
-            </div>
+
+    {% if player['team'] == "men" %}
+
+    <div class="row players-available-men">
+        <div class="col s12 m4 offset-m4">
+            <p>
+                {{ player['firstname'].capitalize() }} {{ player['lastname'].capitalize() }} is
+                {{ player['available'] }} for the {{ player['team'] }}'s team
+                that have a game on {{ player['date'] }} and will meet up with the team at the {{ player['meet'] }}.
+            </p>
         </div>
-        
-    
-    {% endif %}
     </div>
-    {% endfor %}
+
+
+    {% endif %}
+</div>
+{% endfor %}
 
 
 
