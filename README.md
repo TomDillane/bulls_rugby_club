@@ -178,4 +178,36 @@ The main club colors are red and blue, and this is reflected on the site.
 + Python
 + Jinja
 
+#### Tools
+
++ Github as version control
++ Heroku to host the site and application
++ Chrome deverloper tools for on going testing
++ Am I responsive to check site responsiveness
++ W3C Markup and CSS validators
++ PEP8 on line validator
+
+## Testing
+
++ W3C Markup Validator
+
+##### Match Team page
+
+Validator identified stray tag but verified there is none there.
+
+##### Game Result page
+
+Validator identified issue with thead not allowed in table. Structure used 
+from Materialize and site responds exactly as expected. Also mentioned stray tags but 
+verified there are none there.
+Checked line by line on opening and closing tags and looks correct.  
+
++ W3C CSS Validator
+
+No errors found.
+
++ PEP8 online validator
+
+All code is PEP8 compliant.
+
 
