@@ -210,4 +210,31 @@ No errors found.
 
 All code is PEP8 compliant.
 
+## Deployment
+
+#### Application Deployment
+
+The application is deployed on Heroku. This was accomplished by the following:
+
++ Create a requirements.txt file and a Procfile
++ Track these two files by committing to GitHub
++ Go to Heroku and create a new application
++ Navigate to the app and deploy using "GitHub" and link to the relevant repository, in this case "TomDillane/bulls_rugby_club"
++ Go to settings in Heroku and select "Reveal Config Vars"
++ Populate the following fields:
+
+[Heroku config Wireframe](readme_images/heroku.config.png)
+
++ IP - set to 0.0.0.0
++ MONGO_DBNAME - set to bulls_rugby which is the name of the database
++ MONGO_URI - to get this, go to MONGODB Clusters, select "Connect", and choose "Connect your application"
++ Port - set to 5000
++ SECRET_KEY - set to secret key as per key generated and used in untracked file env.Python
+
++ Finally, navigate to "Deploy" and ensure that the master branch is selected
+
+
+
+
+
 
