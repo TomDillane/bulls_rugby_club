@@ -194,16 +194,9 @@ The main club colors are red and blue, and this is reflected on the site.
 
 + W3C Markup Validator
 
-##### Match Team page
+No errors found. Warnings relating to headings is acknowledged and choice is to proceed with layout as intended.
 
-Validator identified stray tag but verified there is none there.
-
-##### Game Result page
-
-Validator identified issue with thead not allowed in table. Structure used 
-from Materialize and site responds exactly as expected. Also mentioned stray tags but 
-verified there are none there.
-Checked line by line on opening and closing tags and looks correct.  
+[HTML validator](readme_images/html_validator.png) 
 
 + W3C CSS Validator
 
