@@ -1,5 +1,8 @@
 # Bulls Rugby Club
 ## Introduction
+
+![Bulls](readme_images/intro.png)
+
 The purpose of this website is to provide an online presence for a Rugby club.
 The site will contain information about the club in general, latest fixtures and 
 results and team details. Users will have the option to join the club and 
@@ -206,9 +209,15 @@ Checked line by line on opening and closing tags and looks correct.
 
 No errors found.
 
+[CSS validator](readme_images/css_validator.png)
+
+
 + PEP8 online validator
 
 All code is PEP8 compliant.
+
+[PEP8 validator](readme_images/css_validator.png)
+
 
 ## Deployment
 
