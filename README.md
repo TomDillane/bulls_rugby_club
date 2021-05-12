@@ -5,9 +5,12 @@
 
 The purpose of this website is to provide an online presence for a Rugby club.
 The site will contain information about the club in general, latest fixtures and 
-results and team details. Users will have the option to join the club and 
-join a team as a player. As a player, the user will be able to elect availability for each match.
-As the manager, the user will be able to input games in the schedule, update results and delete games.
+results and team details. Users will have the option to join the club.
+This can be as a player where details on gender and playing position are gathered along with a profile pic,
+or as a volunteer or social member. 
+As a player, the user will be able to elect availability for each match.
+The user that is the "manager", will be able to input games in the schedule, update results and delete games.
+This "manager", will also have visibility on the players availability.
 
 ## User Stories
 
@@ -31,6 +34,16 @@ As the manager, the user will be able to input games in the schedule, update res
 + I want to be able to remove games from the schedule
 + I want to grow the club membership
 + I want to keep up to date on team memebership
+
+#### Site Owner
+
++ I want to attract and retain players and supporters
++ I want a site where users can get information on the club teams
++ I want players to be able to register for a team
++ I want players to be able to opt in for availability for games
++ I want the team manager to be able to see player availability
++ I want the team manager to be able to set the game schedule
++ I want the team manager to be able to update results and remove games
 
 ## UX
 
@@ -140,7 +153,7 @@ The main club colors are red and blue, and this is reflected on the site.
 
 ## Features
 
-#### Current Features
+### Current Features
 
 + The site will allow new users to join.
 + The site will allow returning users to log in.
@@ -153,6 +166,19 @@ The main club colors are red and blue, and this is reflected on the site.
 + Users can view team members for details of playing position and profile picture.
 + Users can view team game history with results and any upcoming fixtures.
 + Manager can view players available. 
+
+#### Feature breakdown
+
+The color scheme is primarily blue and red in keeping with club colors.
+The base html contains a header and footer that will be available on all pages for consistency.
+The header includes the club name and a NAV bar. This collapses on mobile devices to a burger for ease of use.
+The footer contains the club copyright and the social media links (links just go to homepages of social media for now).
+
+##### Home page
+
+The home page contains a hero image and a short paragraph on the club. 
+
+
 
 #### Future Features
 
@@ -225,15 +251,35 @@ The application is deployed on Heroku. This was accomplished by the following:
 + Go to settings in Heroku and select "Reveal Config Vars"
 + Populate the following fields:
 
-[Heroku config Wireframe](readme_images/heroku.config.png)
+[Heroku config pic](readme_images/heroku.config.png)
 
 + IP - set to 0.0.0.0
 + MONGO_DBNAME - set to bulls_rugby which is the name of the database
 + MONGO_URI - to get this, go to MONGODB Clusters, select "Connect", and choose "Connect your application"
++ Copy the string and replace password and database name
 + Port - set to 5000
 + SECRET_KEY - set to secret key as per key generated and used in untracked file env.Python
 
 + Finally, navigate to "Deploy" and ensure that the master branch is selected
+
+#### Run Locally
+
+To run locally, you need to install the following tools:
+
++ PIP
++ Python3
++ GitHub
++ Create an account at MongoDB
+
+- Go to GitHub and navigate to the main page of the repository (https://github.com/TomDillane/bulls_rugby_club)
+- Click the "Code", drop down.
+- Click the "Copy", icon next to the url.
+- Install Github on your machine and launch the repository that you wish to use.
+- Open Git Bash and navigate to where you want to put the clone.
+- Type git clone https://github.com/TomDillane/bulls_rugby_club
+- Press "Enter".
+- In bash, enter "pip3 install requirements.txt"
+- To run the app locally, enter "python3 app.py", in bash
 
 
 
