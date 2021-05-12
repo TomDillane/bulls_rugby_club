@@ -167,16 +167,83 @@ The main club colors are red and blue, and this is reflected on the site.
 + Users can view team game history with results and any upcoming fixtures.
 + Manager can view players available. 
 
-#### Feature breakdown
+### Feature breakdown
 
 The color scheme is primarily blue and red in keeping with club colors.
 The base html contains a header and footer that will be available on all pages for consistency.
 The header includes the club name and a NAV bar. This collapses on mobile devices to a burger for ease of use.
 The footer contains the club copyright and the social media links (links just go to homepages of social media for now).
 
+The following menu options are available without being logged in:
+
++ Home
++ Women Fixtures and Results
++ Men Fixtures and Results
++ Men's Team
++ Women's Team
++ Sign Up
++ Log In
+
+Logged in as a player, there is a button in the relevant "Fixtures and Results", page pending gender, to 
+select game availability.
+
+Logged in specifically as "manager", the following additional menu items are available:
+
++ Game Schedule
++ Match Team
+
+In addition, user "manager", has a button to "Edit", and "Remove", games in the "Fixtures and Results", pages.
+
 ##### Home page
 
 The home page contains a hero image and a short paragraph on the club. 
+
+#### Fixtures and Results
+
+These pages output the details of past games with results and future games from the database.
++ There is a button when logged in as a player to select game availability. This brings the user to 
+a form where the date is taken from the database of games not yet played known by result being "TBC".
++ The user can select available or unavailable for each date. Selecting available will trigger the option on where
+ to meet the team. On submission, the form empties and user can update another record or use NAV bar to navigate site.
++ There are two buttons under each fixture when logged in as "manager", to edit the score or remove the game. 
++ Clicking "Remove" removes the record from the database and takes "manager", to Game Schedule form / page. 
++ Selecting "Edit", takes "manager", to a form to input the game result and on submission brings the "manager", back to Home.
+
+#### teams
+
++ These pages display details of the players that make up the squad for each team. 
++ It includes a profile pic, name and playing position.
+
+#### Sign up
+
+The signup form contains the following fields:
+
++ Username - must be unique and handled in python to check against database
++ Password - werkzeug hashing implemented so password is unreadable in database. Also must be 5 to 15 characters and can contain
+alpha lower and upper case, and numbers.
++ First Name - string 
++ Last Name - string
++ Membership type - dropdown with option for "volunteer", "social member", or "player"
+
+If option for "player selected, the following fields become visible and are required:
+
++ Gender - dictates which team the player is assigned to.
++ Position - dropdown to select playing position.
++ Profile Pic - profile pic for player to upload (it is URL based now but in future I would like to enhance with file upload)
+
+If user attempts to add an existing username, a flash message advises "Username already exists"
+On selecting a unique username and clicking submit, the newly signed up member is taken to the Log In page.
+
+#### Log In
+
+The Log In form contains the following fields:
+
++ Username
++ Password
+
+If user enters incorrect details, a flash message advises "Incorrect Username and / or Password"
+On correct credential entry and submission, user is taken to Home page with flash message "Welcome, username"
+
 
 
 
