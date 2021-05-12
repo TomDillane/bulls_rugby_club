@@ -21,46 +21,33 @@
 {% endfor %}
 
 <!-- table of results and  fixtures -->
-<table>
-
+<div class="row">
     {% for game in games %}
+    <div class="col s12">
+        <div class="row result-table-head indigo lighten-1">
+            <div class="col s6">Venue: {{ game.venue.capitalize() }}</div>
+            <div class="col s6">Date: {{ game.date }}</div>
+        </div>
+        <div class="row result-table">
+            <div class="col s6">{{ game.team.capitalize() }} Bulls</div>
+            <div class="col s6">{{ game.bullsresult }}</div>
+            <div class="col s6">{{ game.opposition.capitalize() }}</div>
+            <div class="col s6">{{ game.oppresult }}</div>
+        </div>
+    </div>
+    {% if session.user|lower == "manager"|lower %}
+    <div class="row">
+        <div class="col s6"><a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small indigo">Edit</a>
+        </div>
+        <div class="col s6"><a href="{{ url_for('delete_game', game_id=game._id) }}" class="btn-small red">Remove</a>
+        </div>
+    </div>
 
-    <thead>
+    {% endif %}
 
-        <tr class="result-table-head indigo lighten-1">
-            <th>Venue / Date</th>
-            <th>Teams</th>
-            <th>Score</th>
-        </tr>
-    </thead>
+    {% endfor %}
 
-    <tbody class="result-table">
-
-        <tr class="">
-            <td>{{ game.venue }}</td>
-            <td>{{ game.team }} Bulls Team</td>
-            <td>{{ game.bullsresult }}</td>
-        </tr>
-        <tr class="">
-            <td>{{ game.date }}</td>
-            <td>{{ game.opposition }}</td>
-            <td>{{ game.oppresult }}</td>
-        </tr>
-        <tr>
-            {% if session.user|lower == "manager"|lower %}
-            <td>
-                <a href="{{ url_for('update_score', game_id=game._id) }}" class="btn-small indigo">Edit</a>
-            </td>
-            <td> </td>
-            <td>
-                <a href="{{ url_for('delete_game', game_id=game._id) }}" class="btn-small red">Remove</a>
-                {% endif %}
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-
-</table>
+</div>
 
 
 {% endblock %}

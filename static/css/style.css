@@ -215,6 +215,8 @@ nav li:hover {
     font-family: 'Kiwi Maru', serif;
     color: #d8cdcd;
     font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .player-instruct {
