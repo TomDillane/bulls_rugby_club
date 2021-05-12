@@ -201,11 +201,12 @@ The home page contains a hero image and a short paragraph on the club.
 #### Fixtures and Results
 
 These pages output the details of past games with results and future games from the database.
-+ There is a button when logged in as a player to select game availability. This brings the user to 
+There is a button when logged in as a player to select game availability. This brings the user to 
 a form where the date is taken from the database of games not yet played known by result being "TBC".
 + The user can select available or unavailable for each date. Selecting available will trigger the option on where
  to meet the team. On submission, the form empties and user can update another record or use NAV bar to navigate site.
-+ There are two buttons under each fixture when logged in as "manager", to edit the score or remove the game. 
+
+There are two buttons under each fixture when logged in as "manager", to edit the score or remove the game. 
 + Clicking "Remove" removes the record from the database and takes "manager", to Game Schedule form / page. 
 + Selecting "Edit", takes "manager", to a form to input the game result and on submission brings the "manager", back to Home.
 
@@ -220,7 +221,7 @@ The signup form contains the following fields:
 
 + Username - must be unique and handled in python to check against database
 + Password - werkzeug hashing implemented so password is unreadable in database. Also must be 5 to 15 characters and can contain
-alpha lower and upper case, and numbers.
+  alpha lower and upper case, and numbers.
 + First Name - string 
 + Last Name - string
 + Membership type - dropdown with option for "volunteer", "social member", or "player"
@@ -244,7 +245,32 @@ The Log In form contains the following fields:
 If user enters incorrect details, a flash message advises "Incorrect Username and / or Password"
 On correct credential entry and submission, user is taken to Home page with flash message "Welcome, username"
 
+#### Game Availability
 
+This form is available to users of type player only. It is launched via button on the respective "Fixtures 
+and results screen. It contains the following fields:
+
++ Game date drop down for games not yet played, denoted by scoreline "TBC"
++ Option to select "Available", or "Unavailable"
+If "Available", is selected, an option on where to meet the team is presented.
+On submission, the user receives a flash message "Successfully entered availability!" and the form clears.
+
+#### Game schedule
+
+This page is available only to user "manager". The form has the following fields:
+
++ Team - dropdown option for "Men", or "Women"
++ Date - date picker
++ Opposition - string field to capture opposition team name
++ Venue - string field to capture gaame venue
+
+On submission, the user receives a flash message "Game Fixture Entered!" and the form clears.
+
+#### Match Team
+
+This page is available only to user "manager". It returns details from the game availability collection and 
+joins to the user table to present the names of the players that are available and unavailable for 
+the various games.
 
 
 #### Future Features
