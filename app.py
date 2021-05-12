@@ -249,7 +249,6 @@ def match_team():
          "meet": 1,
          "_id": 0}}
         ])
-    print(avail_team)
     return render_template(
         "match_team.html", title="Players", players=avail_team)
 
@@ -257,4 +256,4 @@ def match_team():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
