@@ -11,7 +11,7 @@ or as a volunteer or social member.
 As a player, the user will be able to elect availability for each match.
 The user that is the "manager", will be able to input games in the schedule, update results and delete games.
 This "manager", will also have visibility on the players availability.
-For assessment purposes and testing purposes, the manager is already created. Username and  password are both "manager".
+
 
 ## User Stories
 
