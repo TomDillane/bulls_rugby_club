@@ -194,7 +194,7 @@ Logged in specifically as "manager", the following additional menu items are ava
 
 In addition, user "manager", has a button to "Edit", and "Remove", games in the "Fixtures and Results", pages.
 
-##### Home page
+#### Home page
 
 The home page contains a hero image and a short paragraph on the club. 
 
@@ -279,6 +279,9 @@ the various games.
 + Email integration to auto send mails to players when new fixture entered by "manager".
 + Email integration to auto send mails to team members selected.
 + League table to integrate with results data. 
++ Ability for social members to vote for "player of the match", for each game.
++ Ability for volunteers to opt in for jobs in the club. This will require implementation of tasks that can be optionally taken, 
+  e.g., groundskeeping, etc and dates supplied.
 
 ## Technologies used
 
@@ -295,7 +298,7 @@ the various games.
 #### Languages
 
 + HTML
-+ consistent
++ CSS
 + JavaScript
 + Python
 + Jinja
@@ -311,24 +314,7 @@ the various games.
 
 ## Testing
 
-+ W3C Markup Validator
-
-No errors found. Warnings relating to headings is acknowledged and choice is to proceed with layout as intended.
-
-[HTML validator](readme_images/html_validator.png) 
-
-+ W3C CSS Validator
-
-No errors found.
-
-[CSS validator](readme_images/css_validator.png)
-
-
-+ PEP8 online validator
-
-All code is PEP8 compliant.
-
-[PEP8 validator](readme_images/css_validator.png)
+[Testing file](TESTING.md)
 
 
 ## Deployment
@@ -373,6 +359,20 @@ To run locally, you need to install the following tools:
 - Press "Enter".
 - In bash, enter "pip3 install requirements.txt"
 - To run the app locally, enter "python3 app.py", in bash
+
+## Credits
+
++ The profile pictu0res I have used are from pexels.com
++ The hero image is from unsplash.com
++ I used Cloudinary.com to store the profile pics
++ I used Materialize for the built in classes and Frameworks
++ I used mongodb for my database
+
+All content was written by Tom TomDillane
+
+### Acknowledgements
+
+I would like to thank my mentor for the support in this project.
 
 
 
